@@ -46,6 +46,7 @@ public class Kassenbon {
 
 
         if (preisGesammt > inhaltBrieftache) {
+
             System.out.println("-----------------------------------------------------------");
             System.out.println(" ihnen fehlen " + (preisGesammt - inhaltBrieftache) + " EUR um diese Artikel zu Kaufen");
             System.out.println("-----------------------------------------------------------");
