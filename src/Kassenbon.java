@@ -30,23 +30,42 @@ public class Kassenbon {
 
 
         System.out.println("welches produkt haben sie gekauft");
-        String nameProdukt1 = scanner.nextLine();
+        String nameProdukt1 = scanner.next();
 
 
         System.out.println("Wie viel haben sie von dem Produkt gekauft");
-        Integer anzahlProdukt1 = scanner.nextInt();
+        int anzahlProdukt1 = scanner.nextInt();
 
-        System.out.println("sie haben "+ anzahlProdukt1 + nameProdukt1  );
+        System.out.println(nameProdukt1 + anzahlProdukt1);
 
 
 
         System.out.println("welches produkt haben sie gekauft");
-        String nameProdukt2 = scanner.nextLine();
+        String nameProdukt2 = scanner.next();
 
-     //   System.out.println("Wie viel haben sie von dem Produkt gekauft");
-     //   Integar anzahlProdukt2 = scanner.nextInt();
+        System.out.println("Wie viel haben sie von dem Produkt gekauft");
+        int anzahlProdukt2 = scanner.nextInt();
 
-        System.out.println("sie haben "+ nameProdukt2 );
+        System.out.println(nameProdukt2 + anzahlProdukt2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -54,22 +73,6 @@ public class Kassenbon {
 
 
       //  System.out.println(getPrice("Brot", produkts ));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
