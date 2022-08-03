@@ -34,7 +34,7 @@ public class Kassenbon {
         int anzahlProdukt1 = scanner.nextInt();
         System.out.println(nameProdukt1 + anzahlProdukt1);
 
-        Zettel bon1 = new Zettel( nameProdukt1 , anzahlProdukt1 );
+        Zettel bon1 = new Zettel("" + nameProdukt1 , anzahlProdukt1 );
         bon.add(bon1);
 
         System.out.println(bon1);
@@ -49,7 +49,7 @@ public class Kassenbon {
         int anzahlProdukt2 = scanner.nextInt();
         System.out.println(nameProdukt2 + anzahlProdukt2);
 
-        Zettel bon2 = new Zettel( nameProdukt2 , anzahlProdukt2 );
+        Zettel bon2 = new Zettel("" + nameProdukt2 , anzahlProdukt2 );
         bon.add(bon2);
 
 
@@ -62,7 +62,7 @@ public class Kassenbon {
         int anzahlProdukt3 = scanner.nextInt();
         System.out.println(nameProdukt3 + anzahlProdukt3);
 
-        Zettel bon3 = new Zettel( nameProdukt3 , anzahlProdukt3 );
+        Zettel bon3 = new Zettel("" + nameProdukt3 ,anzahlProdukt3 );
         bon.add(bon3);
 
 
@@ -73,7 +73,7 @@ public class Kassenbon {
         int anzahlProdukt4 = scanner.nextInt();
         System.out.println(nameProdukt4 + anzahlProdukt4);
 
-        Zettel bon4 = new Zettel( nameProdukt4 , anzahlProdukt4 );
+        Zettel bon4 = new Zettel("" + nameProdukt4 , anzahlProdukt4 );
         bon.add(bon4);
 
 
