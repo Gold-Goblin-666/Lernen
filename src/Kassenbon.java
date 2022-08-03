@@ -23,31 +23,57 @@ public class Kassenbon {
         produkts.add(dvd);
 
 
-   //     String nameProdukt = scanner.nextLine();
-     //   int anzahlProdukt = scanner.nextInt();
+        List<Zettel> bon = new ArrayList<>();
 
-      //  System.out.println("sie haben " +nameProdukt + anzahlProdukt );
 
 
         System.out.println("welches produkt haben sie gekauft");
         String nameProdukt1 = scanner.next();
-
-
         System.out.println("Wie viel haben sie von dem Produkt gekauft");
         int anzahlProdukt1 = scanner.nextInt();
-
         System.out.println(nameProdukt1 + anzahlProdukt1);
+
+        Zettel bon1 = new Zettel( nameProdukt1 , anzahlProdukt1 );
+        bon.add(bon1);
+
+        System.out.println(bon1);
+
+
 
 
 
         System.out.println("welches produkt haben sie gekauft");
         String nameProdukt2 = scanner.next();
-
         System.out.println("Wie viel haben sie von dem Produkt gekauft");
         int anzahlProdukt2 = scanner.nextInt();
-
         System.out.println(nameProdukt2 + anzahlProdukt2);
 
+        Zettel bon2 = new Zettel( nameProdukt2 , anzahlProdukt2 );
+        bon.add(bon2);
+
+
+
+
+
+        System.out.println("welches produkt haben sie gekauft");
+        String nameProdukt3 = scanner.next();
+        System.out.println("Wie viel haben sie von dem Produkt gekauft");
+        int anzahlProdukt3 = scanner.nextInt();
+        System.out.println(nameProdukt3 + anzahlProdukt3);
+
+        Zettel bon3 = new Zettel( nameProdukt3 , anzahlProdukt3 );
+        bon.add(bon3);
+
+
+
+        System.out.println("welches produkt haben sie gekauft");
+        String nameProdukt4 = scanner.next();
+        System.out.println("Wie viel haben sie von dem Produkt gekauft");
+        int anzahlProdukt4 = scanner.nextInt();
+        System.out.println(nameProdukt4 + anzahlProdukt4);
+
+        Zettel bon4 = new Zettel( nameProdukt4 , anzahlProdukt4 );
+        bon.add(bon4);
 
 
 
@@ -72,7 +98,16 @@ public class Kassenbon {
 
 
 
-      //  System.out.println(getPrice("Brot", produkts ));
+
+
+
+
+
+
+
+
+
+//        System.out.println(getPrice("Brot", produkts ));
 
 
 
