@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -7,6 +8,7 @@ public class Kassensystem {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        Scanner scanner2 = new Scanner(System.in);
 
         List<Produkt> produkts = new ArrayList<>();
 
@@ -23,16 +25,12 @@ public class Kassensystem {
         produkts.add(dvd);
 
 
-
         List<Kassenbon> bons = new ArrayList<>();
 
         // Schleife bis mann Exit eingibt
 
         boolean kassiererfertig = false;
         boolean produktefertig = false;
-
-
-
 
 
         while (kassiererfertig == false ){
@@ -47,16 +45,18 @@ public class Kassensystem {
                 if (!(nameProdukt.isEmpty())){
 
                     System.out.println(" Wie viel haben sie von dem Produkt gekauft ? ");
-                    int anzahlProdukt = scanner.nextInt();
+                    int anzahlProdukt = scanner2.nextInt();
 
                     System.out.println(nameProdukt + anzahlProdukt);
 
                     Rechnungsposition rp  = new Rechnungsposition(nameProdukt, anzahlProdukt);
                     bon.positionen.add(rp);
+
                 } else {
                     produktefertig = true;
                     System.out.println( " wir sind fertig ");
                     scanner.close();
+                    scanner2.close();
                 }
             }
 
@@ -152,10 +152,6 @@ public class Kassensystem {
 
 
 //        System.out.println(getPrice("Brot", produkts ));
-
-
-
-
 
 
 
