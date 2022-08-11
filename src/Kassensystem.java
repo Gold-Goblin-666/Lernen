@@ -40,18 +40,20 @@ public class Kassensystem {
             while ( produktefertig == false ) {
 
                 System.out.println(" welches Produkt haben sie gekauft ? ");
-                String nameProdukt = scanner.next();
+                String nameProdukt = scanner.nextLine();
 
-                if (nameProdukt != "")
+                if (!(nameProdukt.isEmpty())){
 
-                System.out.println(" Wie viel haben sie von dem Produkt gekauft ? ");
-                int anzahlProdukt = scanner.nextInt();
+                    System.out.println(" Wie viel haben sie von dem Produkt gekauft ? ");
+                    int anzahlProdukt = scanner.nextInt();
 
-                System.out.println(nameProdukt + anzahlProdukt);
+                    System.out.println(nameProdukt + anzahlProdukt);
 
-                Rechnungsposition rp  = new Rechnungsposition();
-                bon.positionen.add(rp);
-
+                    Rechnungsposition rp  = new Rechnungsposition(nameProdukt, anzahlProdukt);
+                    bon.positionen.add(rp);
+                } else {
+                    produktefertig = true;
+                }
             }
 
 
