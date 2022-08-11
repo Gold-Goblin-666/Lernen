@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Kassenbon {
@@ -6,8 +7,15 @@ public class Kassenbon {
     public List<Rechnungsposition> positionen;
 
 
+    public Kassenbon() {
+        positionen = new ArrayList<Rechnungsposition>();
+    }
+
+
     //Datum
     //Zeit
+
+
 
 
 

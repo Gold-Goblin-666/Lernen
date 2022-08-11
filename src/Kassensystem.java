@@ -24,12 +24,14 @@ public class Kassensystem {
 
 
 
-        List<Rechnungsposition> bons = new ArrayList<>();
+        List<Kassenbon> bons = new ArrayList<>();
 
         // Schleife bis mann Exit eingibt
 
         boolean kassiererfertig = false;
         boolean produktefertig = false;
+
+
 
 
 
@@ -53,6 +55,8 @@ public class Kassensystem {
                     bon.positionen.add(rp);
                 } else {
                     produktefertig = true;
+                    System.out.println( " wir sind fertig ");
+                    scanner.close();
                 }
             }
 
@@ -68,52 +72,52 @@ public class Kassensystem {
 
 
 
-        System.out.println("welches produkt haben sie gekauft");
-        String nameProdukt1 = scanner.next();
-        System.out.println("Wie viel haben sie von dem Produkt gekauft");
-        int anzahlProdukt1 = scanner.nextInt();
-        System.out.println(nameProdukt1 + anzahlProdukt1);
-
-        Rechnungsposition bon1 = new Rechnungsposition( nameProdukt1 , anzahlProdukt1 );
-        bons.add(bon1);
-
-        System.out.println(bon1);
-
-
-
-
-        System.out.println("welches produkt haben sie gekauft");
-        String nameProdukt2 = scanner.next();
-        System.out.println("Wie viel haben sie von dem Produkt gekauft");
-        int anzahlProdukt2 = scanner.nextInt();
-        System.out.println(nameProdukt2 + anzahlProdukt2);
-
-        Rechnungsposition bon2 = new Rechnungsposition("" + nameProdukt2 , anzahlProdukt2 );
-        bons.add(bon2);
-
-
-
-
-
-        System.out.println("welches produkt haben sie gekauft");
-        String nameProdukt3 = scanner.next();
-        System.out.println("Wie viel haben sie von dem Produkt gekauft");
-        int anzahlProdukt3 = scanner.nextInt();
-        System.out.println(nameProdukt3 + anzahlProdukt3);
-
-        Rechnungsposition bon3 = new Rechnungsposition("" + nameProdukt3 ,anzahlProdukt3 );
-        bons.add(bon3);
-
-
-
-        System.out.println("welches produkt haben sie gekauft");
-        String nameProdukt4 = scanner.next();
-        System.out.println("Wie viel haben sie von dem Produkt gekauft");
-        int anzahlProdukt4 = scanner.nextInt();
-        System.out.println(nameProdukt4 + anzahlProdukt4);
-
-        Rechnungsposition bon4 = new Rechnungsposition("" + nameProdukt4 , anzahlProdukt4 );
-        bons.add(bon4);
+//        System.out.println("welches produkt haben sie gekauft");
+//        String nameProdukt1 = scanner.next();
+//        System.out.println("Wie viel haben sie von dem Produkt gekauft");
+//        int anzahlProdukt1 = scanner.nextInt();
+//        System.out.println(nameProdukt1 + anzahlProdukt1);
+//
+//        Rechnungsposition bon1 = new Rechnungsposition( nameProdukt1 , anzahlProdukt1 );
+//        bons.add(bon1);
+//
+//        System.out.println(bon1);
+//
+//
+//
+//
+//        System.out.println("welches produkt haben sie gekauft");
+//        String nameProdukt2 = scanner.next();
+//        System.out.println("Wie viel haben sie von dem Produkt gekauft");
+//        int anzahlProdukt2 = scanner.nextInt();
+//        System.out.println(nameProdukt2 + anzahlProdukt2);
+//
+//        Rechnungsposition bon2 = new Rechnungsposition("" + nameProdukt2 , anzahlProdukt2 );
+//        bons.add(bon2);
+//
+//
+//
+//
+//
+//        System.out.println("welches produkt haben sie gekauft");
+//        String nameProdukt3 = scanner.next();
+//        System.out.println("Wie viel haben sie von dem Produkt gekauft");
+//        int anzahlProdukt3 = scanner.nextInt();
+//        System.out.println(nameProdukt3 + anzahlProdukt3);
+//
+//        Rechnungsposition bon3 = new Rechnungsposition("" + nameProdukt3 ,anzahlProdukt3 );
+//        bons.add(bon3);
+//
+//
+//
+//        System.out.println("welches produkt haben sie gekauft");
+//        String nameProdukt4 = scanner.next();
+//        System.out.println("Wie viel haben sie von dem Produkt gekauft");
+//        int anzahlProdukt4 = scanner.nextInt();
+//        System.out.println(nameProdukt4 + anzahlProdukt4);
+//
+//        Rechnungsposition bon4 = new Rechnungsposition("" + nameProdukt4 , anzahlProdukt4 );
+//        bons.add(bon4);
 
 
 
