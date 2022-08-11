@@ -1,9 +1,9 @@
-public class Zettel {
+public class Rechnungsposition {
 
     String name;
     Integer anzahl;
 
-    public Zettel(String name, Integer anzahl) {
+    public Rechnungsposition(String name, Integer anzahl) {
         this.name = name;
         this.anzahl = anzahl;
     }
@@ -23,4 +23,13 @@ public class Zettel {
     public void setAnzahl(Integer anzahl) {
         this.anzahl = anzahl;
     }
+
+    @Override
+    public String toString() {
+        return "Rechnungsposition{" +
+                "name='" + name + '\'' +
+                ", anzahl=" + anzahl +
+                '}';
+    }
 }
+
