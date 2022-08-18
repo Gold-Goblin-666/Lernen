@@ -55,10 +55,13 @@ public class Kassensystem {
                 } else {
                     produktefertig = true;
                     System.out.println( " wir sind fertig ");
-                    scanner.close();
-                    scanner2.close();
+
                 }
             }
+
+            System.out.println(bon.toString());
+            produktefertig = false;
+            kassiererfertig = true ;
 
 
 
@@ -66,7 +69,8 @@ public class Kassensystem {
 
 
         }
-
+        scanner.close();
+        scanner2.close();
 
 
 
