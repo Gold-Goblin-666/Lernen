@@ -31,8 +31,17 @@ public class Kassenbon {
 
 
 
+
+
+
         return drucken;
     }
+
+
+
+
+
+
 
 
 

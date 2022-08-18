@@ -26,10 +26,7 @@ public class Rechnungsposition {
 
     @Override
     public String toString() {
-        return "Rechnungsposition{" +
-                "name='" + name + '\'' +
-                ", anzahl=" + anzahl +
-                '}';
+        return anzahl + " " + "*" + " " + name ;
     }
 }
 

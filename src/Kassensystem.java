@@ -33,6 +33,7 @@ public class Kassensystem {
         boolean produktefertig = false;
 
 
+
         while (kassiererfertig == false ){
 
             Kassenbon bon = new Kassenbon();
@@ -44,10 +45,12 @@ public class Kassensystem {
 
                 if (!(nameProdukt.isEmpty())){
 
+
+
                     System.out.println(" Wie viel haben sie von dem Produkt gekauft ? ");
                     int anzahlProdukt = scanner2.nextInt();
 
-                    System.out.println(nameProdukt + anzahlProdukt);
+                    System.out.println(nameProdukt + " " + anzahlProdukt);
 
                     Rechnungsposition rp  = new Rechnungsposition(nameProdukt, anzahlProdukt);
                     bon.positionen.add(rp);
@@ -61,7 +64,7 @@ public class Kassensystem {
 
             //System.out.println(bon.toString());
 
-            System.out.println(bon.positionen.get(1) );
+            System.out.println(bon.toString());
 
             produktefertig = false;
             kassiererfertig = true ;
@@ -212,6 +215,9 @@ public class Kassensystem {
         }
         return null;
     }
+
+
+    
 
 }
 
