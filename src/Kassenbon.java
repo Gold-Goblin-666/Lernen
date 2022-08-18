@@ -13,23 +13,26 @@ public class Kassenbon {
     }
 
 
+
+
         @Override
     public String toString() {
-        return "Kassenbon{" +
-                "adresse=" + adresse +
-                ", positionen=" + positionen +
-                '}';
+        String drucken;
+
+        drucken =
+
+         "Kassenbon" + '\n' +
+               "kasse 1 " +  '\n' +
+                "--------------------" + '\n' +
+                 positionen  + '}';
+
+
+
+
+
+
+        return drucken;
     }
-
-
-
-//    @Override
-//    public String toString() {
-//        return "Kassenbon" + '\n' +
-//                "kasse 1 " +  '\n' +
-//                "--------------------" + '\n' +
-//                 positionen  + '}';
-//    }
 
 
 

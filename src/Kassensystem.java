@@ -59,7 +59,10 @@ public class Kassensystem {
                 }
             }
 
-            System.out.println(bon.toString());
+            //System.out.println(bon.toString());
+
+            System.out.println(bon.positionen.get(1) );
+
             produktefertig = false;
             kassiererfertig = true ;
 
