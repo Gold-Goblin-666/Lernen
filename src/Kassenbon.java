@@ -22,9 +22,9 @@ public class Kassenbon {
         drucken =
 
          "Kassenbon" + '\n' +
-               "kasse 1 " +  '\n' +
-                "--------------------" + '\n' +
-                 positionen  + '}';
+                 "kasse 1 " +  '\n' +
+                 "--------------------" + '\n' +
+                 positionen;
 
 
 
