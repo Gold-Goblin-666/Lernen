@@ -45,8 +45,6 @@ public class Kassensystem {
 
                 if (!(nameProdukt.isEmpty())){
 
-
-
                     System.out.println(" Wie viel haben sie von dem Produkt gekauft ? ");
                     int anzahlProdukt = scanner2.nextInt();
 
@@ -215,9 +213,6 @@ public class Kassensystem {
         }
         return null;
     }
-
-
-    
 
 }
 

@@ -24,9 +24,13 @@ public class Rechnungsposition {
         this.anzahl = anzahl;
     }
 
+
+
+
+
     @Override
     public String toString() {
-        return anzahl + " " + "*" + " " + name ;
+        return anzahl+ " * " + name ;
     }
 }
 

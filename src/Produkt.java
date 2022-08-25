@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Produkt {
 
     String name;
@@ -7,6 +9,7 @@ public class Produkt {
         this.name = name;
         this.preis = preis;
     }
+
 
     public Double getPreis() {
         return preis;

@@ -1,3 +1,4 @@
+import javax.swing.*;
 import javax.xml.namespace.QName;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +24,13 @@ public class Kassenbon {
 
          "Kassenbon" + '\n' +
                  "kasse 1 " +  '\n' +
-                 "--------------------" + '\n' +
-                 positionen;
+                 "--------------------------------" +
+
+                 for( int i = 0 ; i <= positionen.size() ; i++ ){
+                     positionen.get(i);
+
+                 }
+
 
 
 
