@@ -27,8 +27,7 @@ public class Kassenbon {
                  "--------------------------------" +
 
                  for( int i = 0 ; i <= positionen.size() ; i++ ){
-                     positionen.get(i);
-
+                     System.out.println(positionen.get(i));
                  }
 
 
