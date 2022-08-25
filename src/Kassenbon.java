@@ -1,7 +1,6 @@
-import javax.swing.*;
-import javax.xml.namespace.QName;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.prefs.PreferenceChangeEvent;
 
 public class Kassenbon {
 
@@ -16,31 +15,40 @@ public class Kassenbon {
 
 
 
-        @Override
-    public String toString() {
-        String drucken;
 
-        drucken = "Kassenbon" + '\n' + "kasse 1 " +  '\n' + "--------------------------------" ;
 
-        System.out.println(drucken);
+
+
+
+    public void printIt( List<Produkt> produkts) {
+
+        double gesammt = 0.0;
+
+        System.out.println( "Kassenbon" + '\n' + "kasse 1 " +  '\n' + "--------------------------------" );
 
         for( int i = 0 ; i < positionen.size() ; i++ ){
-            System.out.println(positionen.get(i));
+            System.out.print(positionen.get(i) + " ");
+
+            Rechnungsposition position = positionen.get(i);
+
+            System.out.println(Kassensystem.getPrice(position.getName(), produkts ));
+
+            System.out.println(Kassensystem.getPrice(position.getName(), produkts ) * position.anzahl);
+
+            gesammt = gesammt + Kassensystem.getPrice(position.getName(), produkts ) * position.anzahl;
 
 
-            System.out.println(Kassensystem.getPrice());
+
         }
 
+        System.out.println("-------------------------------");
+
+        System.out.println(gesammt);
 
 
 
 
 
-
-
-
-
-        return drucken ;
     }
 
 

@@ -31,48 +31,60 @@ public class Kassensystem {
 
         boolean kassiererfertig = false;
         boolean produktefertig = false;
+        boolean endkunde = false ;
+
+        while (endkunde == false){
 
 
 
-        while (kassiererfertig == false ){
 
-            Kassenbon bon = new Kassenbon();
+            while (kassiererfertig == false ){
 
-            while ( produktefertig == false ) {
+                Kassenbon bon = new Kassenbon();
 
-                System.out.println(" welches Produkt haben sie gekauft ? ");
-                String nameProdukt = scanner.nextLine();
+                while ( produktefertig == false ) {
 
-                if (!(nameProdukt.isEmpty())){
+                    System.out.println(" welches Produkt haben sie gekauft ? ");
+                    String nameProdukt = scanner.nextLine();
 
-                    System.out.println(" Wie viel haben sie von dem Produkt gekauft ? ");
-                    int anzahlProdukt = scanner2.nextInt();
+                    if (!(nameProdukt.isEmpty())){
 
-                    System.out.println(nameProdukt + " " + anzahlProdukt);
+                        System.out.println(" Wie viel haben sie von dem Produkt gekauft ? ");
+                        int anzahlProdukt = scanner2.nextInt();
 
-                    Rechnungsposition rp  = new Rechnungsposition(nameProdukt, anzahlProdukt);
-                    bon.positionen.add(rp);
+                        System.out.println(nameProdukt + " " + anzahlProdukt);
 
-                } else {
-                    produktefertig = true;
-                    System.out.println( " wir sind fertig ");
+                        Rechnungsposition rp  = new Rechnungsposition(nameProdukt, anzahlProdukt);
+                        bon.positionen.add(rp);
 
+
+
+                    } else {
+                        produktefertig = true;
+                        System.out.println( " wir sind fertig "  + '\n'+ '\n'+ '\n');
+
+                    }
                 }
+
+                //System.out.println(bon.toString());
+
+                bon.printIt(produkts);
+
+                produktefertig = false;
+                kassiererfertig = true ;
+
+
             }
-
-            //System.out.println(bon.toString());
-
-            System.out.println(bon.toString());
-
-            produktefertig = false;
-            kassiererfertig = true ;
-
 
 
 
 
 
         }
+
+
+
+
         scanner.close();
         scanner2.close();
 
@@ -157,9 +169,10 @@ public class Kassensystem {
 
 
 
+//          System.out.println(getPrice(nameProdukt, produkts ));
 
+//        System.out.println(getPrice("Brot", produkts ));
 
-        System.out.println(getPrice("Brot", produkts ));
 
 
 
