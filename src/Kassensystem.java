@@ -159,7 +159,7 @@ public class Kassensystem {
 
 
 
-//        System.out.println(getPrice("Brot", produkts ));
+        System.out.println(getPrice("Brot", produkts ));
 
 
 

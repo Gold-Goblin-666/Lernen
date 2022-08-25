@@ -20,18 +20,16 @@ public class Kassenbon {
     public String toString() {
         String drucken;
 
-        drucken =
+        drucken = "Kassenbon" + '\n' + "kasse 1 " +  '\n' + "--------------------------------" ;
 
-         "Kassenbon" + '\n' +
-                 "kasse 1 " +  '\n' +
-                 "--------------------------------" +
+        System.out.println(drucken);
 
-                 for( int i = 0 ; i <= positionen.size() ; i++ ){
-                     System.out.println(positionen.get(i));
-                 }
+        for( int i = 0 ; i < positionen.size() ; i++ ){
+            System.out.println(positionen.get(i));
 
 
-
+            System.out.println(Kassensystem.getPrice());
+        }
 
 
 
@@ -39,7 +37,10 @@ public class Kassenbon {
 
 
 
-        return drucken;
+
+
+
+        return drucken ;
     }
 
 
