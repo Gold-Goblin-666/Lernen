@@ -11,6 +11,8 @@ public class Kassensystem {
         Scanner scanner = new Scanner(System.in);
         Scanner scanner2 = new Scanner(System.in);
 
+        double alles = 0;
+
         List<Produkt> produkts = new ArrayList<>();
 
         try{
@@ -94,14 +96,28 @@ public class Kassensystem {
 
             //System.out.println(bon.toString());
 
-            bon.printIt(produkts);
+            double gesammt = bon.printIt(produkts);
+            alles = alles + gesammt;
+
+
+
+
+
+
+
+
+
+            System.out.println(alles);
+
+
+
 
 
 
 
 
             produktefertig = false;
-            kassiererfertig = true ;
+            kassiererfertig = false ;
 
 
         }
