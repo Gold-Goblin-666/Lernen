@@ -1,4 +1,5 @@
-import javax.swing.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,7 +13,33 @@ public class Kassensystem {
 
         List<Produkt> produkts = new ArrayList<>();
 
-        Produkt wurst = new Produkt( "Wurst", 4.20);
+        try{
+            Scanner csvscanner = new Scanner(new File("CSVKassenbon.csv"));
+
+            int i = 0;
+
+            while (csvscanner.hasNextLine() ){
+                String line = csvscanner.nextLine();
+                String[] split = line.split(";");
+
+                if (i == 0){
+                    i++;
+                    continue;
+                } else {
+                    double price = Double.parseDouble(split[1].replace(",", "."));
+                    Produkt produkt = new Produkt( split[0],price);
+                    produkts.add(produkt);
+                    i++;
+                }
+            }
+            csvscanner.close();
+           // System.out.println( produkts);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+
+/*        Produkt wurst = new Produkt( "Wurst", 4.20);
         produkts.add(wurst);
 
         Produkt kaese = new Produkt("Kaese", 2.30);
@@ -23,6 +50,8 @@ public class Kassensystem {
 
         Produkt dvd = new Produkt("DVD", 12.00);
         produkts.add(dvd);
+*/
+
 
 
         List<Kassenbon> bons = new ArrayList<>();
@@ -31,62 +60,57 @@ public class Kassensystem {
 
         boolean kassiererfertig = false;
         boolean produktefertig = false;
-        boolean endkunde = false ;
-
-        while (endkunde == false){
 
 
+        while (kassiererfertig == false ){
+
+            Kassenbon bon = new Kassenbon();
+
+            while ( produktefertig == false ) {
 
 
-            while (kassiererfertig == false ){
+                scanner = new Scanner(System.in);
+                // Warum muss es neu initialisiert werden
 
-                Kassenbon bon = new Kassenbon();
 
-                while ( produktefertig == false ) {
+                System.out.println(" welches Produkt haben sie gekauft ? ");
+                String nameProdukt = scanner.nextLine();
 
-                    System.out.println(" welches Produkt haben sie gekauft ? ");
-                    String nameProdukt = scanner.nextLine();
+                if (!(nameProdukt.isEmpty())){
 
-                    if (!(nameProdukt.isEmpty())){
+                    System.out.println(" Wie viel haben sie von dem Produkt gekauft ? ");
+                    int anzahlProdukt = scanner.nextInt();
 
-                        System.out.println(" Wie viel haben sie von dem Produkt gekauft ? ");
-                        int anzahlProdukt = scanner2.nextInt();
+                    System.out.println(nameProdukt + " " + anzahlProdukt);
 
-                        System.out.println(nameProdukt + " " + anzahlProdukt);
-
-                        Rechnungsposition rp  = new Rechnungsposition(nameProdukt, anzahlProdukt);
-                        bon.positionen.add(rp);
+                    Rechnungsposition rp  = new Rechnungsposition(nameProdukt, anzahlProdukt);
+                    bon.positionen.add(rp);
 
 
 
-                    } else {
-                        produktefertig = true;
-                        System.out.println( " wir sind fertig "  + '\n'+ '\n'+ '\n');
+                } else {
+                    produktefertig = true;
+                    System.out.println( " wir sind fertig "  + '\n'+ '\n'+ '\n');
 
-                    }
                 }
-
-                //System.out.println(bon.toString());
-
-                bon.printIt(produkts);
-
-                produktefertig = false;
-                kassiererfertig = true ;
-
-
             }
 
 
+            //System.out.println(bon.toString());
 
+            bon.printIt(produkts);
+
+            produktefertig = false;
+            kassiererfertig = true ;
 
 
         }
 
 
 
-
         scanner.close();
         scanner2.close();
+
 
 
 
