@@ -10,6 +10,7 @@ public class Kassensystem {
 
         Scanner scanner = new Scanner(System.in);
         Scanner scanner2 = new Scanner(System.in);
+        Scanner scanner3 = new Scanner(System.in);
 
         double alles = 0;
 
@@ -58,12 +59,22 @@ public class Kassensystem {
         // Schleife bis mann Exit eingibt
 
         boolean kassiererfertig = false;
-        boolean produktefertig = false;
+        boolean produktefertig;
 
 
         while (kassiererfertig == false ){
 
             Kassenbon bon = new Kassenbon();
+
+            System.out.println("Nächster Kunde [Y/N]");
+            String naehsterKunde = scanner3.nextLine();
+
+            if (naehsterKunde.equals("N")){
+                produktefertig = true;
+                kassiererfertig = true;
+            } else {
+                produktefertig = false;
+            }
 
             while ( produktefertig == false ) {
 
@@ -85,8 +96,6 @@ public class Kassensystem {
                     Rechnungsposition rp  = new Rechnungsposition(nameProdukt, anzahlProdukt);
                     bon.positionen.add(rp);
 
-
-
                 } else {
                     produktefertig = true;
                     System.out.println( " wir sind fertig "  + '\n'+ '\n'+ '\n');
@@ -96,25 +105,15 @@ public class Kassensystem {
 
             //System.out.println(bon.toString());
 
-            double gesammt = bon.printIt(produkts);
-            alles = alles + gesammt;
+            if (produktefertig == true && kassiererfertig == false){
 
-            System.out.println(alles);
+                double gesammt = bon.printIt(produkts);
+                alles = alles + gesammt;
 
-
-
-
-
-
-
-
-            produktefertig = false;
-            kassiererfertig = false ;
-
-
+            }
         }
 
-
+        System.out.println("Heutiger gesammter verkauf : " + alles + "€");
 
         scanner.close();
         scanner2.close();

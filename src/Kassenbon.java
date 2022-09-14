@@ -23,7 +23,6 @@ public class Kassenbon {
     public double printIt(List<Produkt> produkts) {
 
         double gesammt = 0.0;
-        double alles = 0;
 
 
         System.out.println( "Kassenbon" + '\n' + "kasse 1 " +  '\n' + "--------------------------------" );
@@ -48,7 +47,7 @@ public class Kassenbon {
 
         System.out.println(gesammt);
 
-        System.out.println(" " + '\n'+'\n'+'\n'+'\n');
+        System.out.println(" " + '\n'+'\n');
 
 
         return gesammt;
