@@ -99,14 +99,6 @@ public class Kassensystem {
             double gesammt = bon.printIt(produkts);
             alles = alles + gesammt;
 
-
-
-
-
-
-
-
-
             System.out.println(alles);
 
 
