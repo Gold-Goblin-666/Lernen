@@ -67,9 +67,9 @@ public class Kassensystem {
             Kassenbon bon = new Kassenbon();
 
             System.out.println("Nächster Kunde [Y/N]");
-            String naehsterKunde = scanner3.nextLine();
+            String naechsterKunde = scanner3.nextLine();
 
-            if (naehsterKunde.equals("N")){
+            if (naechsterKunde.equals("N")){
                 produktefertig = true;
                 kassiererfertig = true;
             } else {
@@ -117,6 +117,7 @@ public class Kassensystem {
 
         scanner.close();
         scanner2.close();
+        scanner3.close();
 
 
 
