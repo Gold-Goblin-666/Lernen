@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5b722ad3-cc90-4c03-a5a4-b3841a7075f1" name="Changes" comment="kassenbon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kassenbon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kassenbon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Kassensystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kassensystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Produkt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Produkt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662970484875</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="kassenbon">
+      <created>1663148094823</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1663148094823</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -275,21 +284,6 @@
           <properties class="java.io.FileNotFoundException" package="java.io" />
           <option name="timeStamp" value="11" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Kassensystem.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Kassensystem.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Kassensystem.java</url>
-          <line>90</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.prefs.PreferenceChangeEvent;
 
 public class Kassenbon {
 
@@ -39,15 +38,14 @@ public class Kassenbon {
 
 
 
+
         }
 
         System.out.println("-------------------------------");
 
         System.out.println(gesammt);
 
-
-
-
+        System.out.println('\n'+'\n'+'\n'+'\n');
 
     }
 

@@ -22,15 +22,12 @@ public class Kassensystem {
                 String line = csvscanner.nextLine();
                 String[] split = line.split(";");
 
-                if (i == 0){
-                    i++;
-                    continue;
-                } else {
+                if (i != 0) {
                     double price = Double.parseDouble(split[1].replace(",", "."));
-                    Produkt produkt = new Produkt( split[0],price);
+                    Produkt produkt = new Produkt(split[0], price);
                     produkts.add(produkt);
-                    i++;
                 }
+                i++;
             }
             csvscanner.close();
            // System.out.println( produkts);
@@ -95,10 +92,13 @@ public class Kassensystem {
                 }
             }
 
-
             //System.out.println(bon.toString());
 
             bon.printIt(produkts);
+
+
+
+
 
             produktefertig = false;
             kassiererfertig = true ;
