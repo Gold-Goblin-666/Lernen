@@ -28,7 +28,7 @@ public class Kassenbon {
         String datumzeit = new SimpleDateFormat("dd/MM/yyyy HH:mm").format(Calendar.getInstance().getTime());
 
 
-        System.out.println( "Kassenbon" + '\n' + "kasse 1 " + '\n' + datumzeit + '\n' + "--------------------------------" );
+        System.out.println( "Kassenbon" + '\n' + "kasse 1 " + '\n' + datumzeit + '\n' + "-------------------------------" );
 
         for( int i = 0 ; i < positionen.size() ; i++ ){
             System.out.print(positionen.get(i) + " ");
@@ -37,7 +37,7 @@ public class Kassenbon {
 
             System.out.println(Kassensystem.getPrice(position.getName(), produkts ));
 
-            System.out.println(Kassensystem.getPrice(position.getName(), produkts ) * position.anzahl);
+            System.out.println("                       " + Kassensystem.getPrice(position.getName(), produkts ) * position.anzahl + " EUR");
 
             gesammt = gesammt + Kassensystem.getPrice(position.getName(), produkts ) * position.anzahl;
 
@@ -48,7 +48,7 @@ public class Kassenbon {
 
         System.out.println("-------------------------------");
 
-        System.out.println(gesammt + 'EUR');
+        System.out.println(gesammt + " EUR");
 
         System.out.println(" " + '\n'+'\n');
 
