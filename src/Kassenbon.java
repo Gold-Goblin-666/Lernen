@@ -35,7 +35,7 @@ public class Kassenbon {
 
             double preisMehrere = preis * position.anzahl;
 
-            double rundenMehrere = Math.round(preisMehrere*100.0)/100.0;
+            double rundenMehrere = Math.round(preisMehrere*100)/100.0;
 
 
 
