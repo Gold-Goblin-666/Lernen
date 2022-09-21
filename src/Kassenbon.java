@@ -14,14 +14,6 @@ public class Kassenbon {
         positionen = new ArrayList<Rechnungsposition>();
     }
 
-
-
-
-
-
-
-
-
     public double printIt(List<Produkt> produkts) {
 
         double gesammt = 0.0;
