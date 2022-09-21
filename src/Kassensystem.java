@@ -77,7 +77,9 @@ public class Kassensystem {
             }
         }
 
-        System.out.println("Heutiger gesammter verkauf : " + alles + "€");
+        String rundenAllesEnde =String.format("%.2f",alles);
+
+        System.out.println("Heutiger gesammter verkauf : " + rundenAllesEnde + "€");
 
         scanner.close();
 

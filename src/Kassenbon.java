@@ -37,9 +37,19 @@ public class Kassenbon {
 
             String rundenMehrere =String.format("%.2f",preisMehrere);
 
-            System.out.println("           " + rundenMehrere + " EUR");
+            int length = rundenMehrere.length();
 
-            gesammt = gesammt + rundenMehrere;
+
+
+
+
+
+
+            System.out.println("          " + rundenMehrere + " EUR");
+
+            gesammt = gesammt + preisMehrere;
+
+
 
 
 
@@ -47,7 +57,17 @@ public class Kassenbon {
 
         System.out.println("-------------------------------");
 
-        System.out.println(gesammt + " EUR");
+        String rundenalles =String.format("%.2f",gesammt);
+
+        int leerzeichenEnde = 31-rundenalles.length()-4;
+
+        String t = "";
+
+        for(int i=0; i<leerzeichenEnde; i++){
+            t = t + " ";
+        }
+
+        System.out.println(t + rundenalles + " EUR");
 
         System.out.println(" " + '\n'+'\n');
 
