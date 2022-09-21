@@ -48,7 +48,7 @@ public class Kassenbon {
 
         System.out.println("-------------------------------");
 
-        System.out.println(gesammt);
+        System.out.println(gesammt + 'EUR');
 
         System.out.println(" " + '\n'+'\n');
 

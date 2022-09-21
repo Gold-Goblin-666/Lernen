@@ -9,8 +9,6 @@ public class Kassensystem {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        Scanner scanner2 = new Scanner(System.in);
-        Scanner scanner3 = new Scanner(System.in);
 
         double alles = 0;
 
@@ -67,7 +65,7 @@ public class Kassensystem {
             Kassenbon bon = new Kassenbon();
 
             System.out.println("Nächster Kunde [Y/N]");
-            String naechsterKunde = scanner3.nextLine();
+            String naechsterKunde = scanner.nextLine();
 
             if (naechsterKunde.equals("N")){
                 produktefertig = true;
@@ -79,21 +77,28 @@ public class Kassensystem {
             while ( produktefertig == false ) {
 
 
-                scanner = new Scanner(System.in);
+                // scanner = new Scanner(System.in);
                 // Warum muss es neu initialisiert werden
 
 
                 System.out.println(" welches Produkt haben sie gekauft ? ");
                 String nameProdukt = scanner.nextLine();
 
-                if (!(nameProdukt.isEmpty())){
+                if (!(nameProdukt.isEmpty())) {
 
                     System.out.println(" Wie viel haben sie von dem Produkt gekauft ? ");
-                    int anzahlProdukt = scanner.nextInt();
+
+                    int anzahlProdukt = 0;
+                    try {
+                        anzahlProdukt = Integer.parseInt(scanner.nextLine());
+                    } catch (NumberFormatException n) {
+                        System.out.println(" Schreibe eine Zahl ");
+
+                    }
 
                     System.out.println(nameProdukt + " " + anzahlProdukt);
 
-                    Rechnungsposition rp  = new Rechnungsposition(nameProdukt, anzahlProdukt);
+                    Rechnungsposition rp = new Rechnungsposition(nameProdukt, anzahlProdukt);
                     bon.positionen.add(rp);
 
                 } else {
@@ -116,8 +121,6 @@ public class Kassensystem {
         System.out.println("Heutiger gesammter verkauf : " + alles + "€");
 
         scanner.close();
-        scanner2.close();
-        scanner3.close();
 
 
 
@@ -257,6 +260,29 @@ public class Kassensystem {
             }
         }
         return null;
+    }
+
+    public
+    try{
+        Scanner csvscanner = new Scanner(new File("CSVKassenbon.csv"));
+
+        int i = 0;
+
+        while (csvscanner.hasNextLine() ){
+            String line = csvscanner.nextLine();
+            String[] split = line.split(";");
+
+            if (i != 0) {
+                double price = Double.parseDouble(split[1].replace(",", "."));
+                Produkt produkt = new Produkt(split[0], price);
+                produkts.add(produkt);
+            }
+            i++;
+        }
+        csvscanner.close();
+        // System.out.println( produkts);
+    } catch (FileNotFoundException e) {
+        throw new RuntimeException(e);
     }
 
 }
