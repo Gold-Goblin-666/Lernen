@@ -35,21 +35,11 @@ public class Kassenbon {
 
             double preisMehrere = preis * position.anzahl;
 
-            double rundenMehrere = Math.round(preisMehrere*100)/100.0;
-
-
-
-
-
-
-
-
-
+            String rundenMehrere =String.format("%.2f",preisMehrere);
 
             System.out.println("           " + rundenMehrere + " EUR");
 
             gesammt = gesammt + rundenMehrere;
-
 
 
 
