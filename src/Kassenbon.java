@@ -27,9 +27,9 @@ public class Kassenbon {
 
             Rechnungsposition position = positionen.get(i);
 
-            System.out.println(Kassensystem.getPrice(position.getName(), produkts ));
+            System.out.print(Kassensystem.getPrice(position.getName(), produkts ));
 
-            System.out.println("                       " + Kassensystem.getPrice(position.getName(), produkts ) * position.anzahl + " EUR");
+            System.out.println("           " + Kassensystem.getPrice(position.getName(), produkts ) * position.anzahl + " EUR");
 
             gesammt = gesammt + Kassensystem.getPrice(position.getName(), produkts ) * position.anzahl;
 
