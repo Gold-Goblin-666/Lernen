@@ -40,11 +40,6 @@ public class Kassensystem {
 
             while ( produktefertig == false ) {
 
-
-                // scanner = new Scanner(System.in);
-                // Warum muss es neu initialisiert werden
-
-
                 System.out.println(" welches Produkt haben sie gekauft ? ");
                 String nameProdukt = scanner.nextLine();
 
