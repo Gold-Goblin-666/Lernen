@@ -30,9 +30,15 @@ public class Kassenbon {
 
             System.out.print(Kassensystem.getPrice(position.getName(), produkts ));
 
-            System.out.println("           " + Kassensystem.getPrice(position.getName(), produkts ) * position.anzahl + " EUR");
 
-            gesammt = gesammt + Kassensystem.getPrice(position.getName(), produkts ) * position.anzahl;
+            double preis = Kassensystem.getPrice(position.getName(), produkts );
+
+
+
+
+            System.out.println("           " + preis * position.anzahl + " EUR");
+
+            gesammt = gesammt + preis * position.anzahl;
 
 
 
