@@ -33,12 +33,22 @@ public class Kassenbon {
 
             double preis = Kassensystem.getPrice(position.getName(), produkts );
 
+            double preisMehrere = preis * position.anzahl;
+
+            double rundenMehrere = Math.round(preisMehrere*100.0)/100.0;
 
 
 
-            System.out.println("           " + preis * position.anzahl + " EUR");
 
-            gesammt = gesammt + preis * position.anzahl;
+
+
+
+
+
+
+            System.out.println("           " + rundenMehrere + " EUR");
+
+            gesammt = gesammt + rundenMehrere;
 
 
 
