@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5b722ad3-cc90-4c03-a5a4-b3841a7075f1" name="Changes" comment="28.09.2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sample - Superstore - utf8.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Sample - Superstore - utf8.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,20 +80,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1658996036519</updated>
-    </task>
-    <task id="LOCAL-00002" summary="kassenbon">
-      <created>1659000767525</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1659000767525</updated>
-    </task>
-    <task id="LOCAL-00003" summary="kassenbon">
-      <created>1659015575612</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1659015575612</updated>
     </task>
     <task id="LOCAL-00004" summary="kassenbon">
       <created>1659533307497</created>
@@ -423,7 +410,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664360401309</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="28.09.2022">
+      <created>1664364708485</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1664364708485</updated>
+    </task>
+    <task id="LOCAL-00052" summary="28.09.2022">
+      <created>1664364717404</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1664364717404</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -468,7 +469,7 @@
           <option name="timeStamp" value="17" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <condition expression="i == 182" language="JAVA" />
+          <condition expression="i == 427" language="JAVA" />
           <url>file://$PROJECT_DIR$/src/Kassensystem.java</url>
           <line>147</line>
           <option name="timeStamp" value="21" />
