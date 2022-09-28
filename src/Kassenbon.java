@@ -28,30 +28,36 @@ public class Kassenbon {
 
             Rechnungsposition position = positionen.get(i);
 
-            System.out.print(Kassensystem.getPrice(position.getName(), produkts ));
-
-
             double preis = Kassensystem.getPrice(position.getName(), produkts );
+
+            String rundenpreis =String.format("%.2f",preis);
+
+            System.out.print(rundenpreis);
+
 
             double preisMehrere = preis * position.anzahl;
 
-            String rundenMehrere =String.format("%.2f",preisMehrere);
+            String rundenMehrere = String.format("%.2f",preisMehrere);
+
+            String preisLaenge =Double.toString(preis);
+
+            String positoinenString = positionen.get(i).toString();
 
             int length = rundenMehrere.length();
+            int lenghtpreis = preisLaenge.length();
+            int lenghtPositionen = positoinenString.length();
 
 
+            int leerzeichenMitte = 31-4-2- lenghtPositionen - lenghtpreis - length ;
 
+            String z = "";
 
-
-
-
-            System.out.println("          " + rundenMehrere + " EUR");
+            for(int b=0; b<leerzeichenMitte; b++){
+                z = z + " ";
+            }
+            System.out.println(z + rundenMehrere + " EUR");
 
             gesammt = gesammt + preisMehrere;
-
-
-
-
 
         }
 
@@ -73,28 +79,5 @@ public class Kassenbon {
 
 
         return gesammt;
-
-
     }
-
-
-
-
-
-
-
-
-
-//    @Override
-//    public String toString() {
-//        return "Kassenbon{" +
-//                "adresse=" + adresse +
-//                ", positionen=" + positionen +
-//                '}';
-//    }
-
-//Datum
-    //Zeit
-
-
 }
