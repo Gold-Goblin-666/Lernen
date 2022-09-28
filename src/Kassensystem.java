@@ -134,7 +134,7 @@ public class Kassensystem {
 
     private static List<Produkt> csvreaderlong(List<Produkt> produkts) {
         try{
-            Scanner csvscanner = new Scanner(new File("Sample - Superstore.csv"));
+            Scanner csvscanner = new Scanner(new File("Sample - Superstore - utf8.csv"));
 
             int i = 0;
 
@@ -142,10 +142,6 @@ public class Kassensystem {
                 String line = csvscanner.nextLine();
 
                 //sonderzeichen ersetzen
-
-
-
-
 
                 String[] split = line.split(";");
 
