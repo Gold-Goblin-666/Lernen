@@ -15,6 +15,7 @@ public class Kassensystem {
         List<Produkt> produkts = new ArrayList<>();
 
         csvreader(produkts);
+        csvreaderlong(produkts);
 
         List<Kassenbon> bons = new ArrayList<>();
 
@@ -110,6 +111,9 @@ public class Kassensystem {
         return produkts;
     }
 
+
+
+
     static Double getPrice(String name, List<Produkt> produkts){
 
         for ( int i = 0 ; i < produkts.size() ; i ++ ) {
@@ -122,6 +126,35 @@ public class Kassensystem {
             }
         }
         return null;
+    }
+
+
+
+
+
+    private static List<Produkt> csvreaderlong(List<Produkt> produkts) {
+        try{
+            Scanner csvscanner = new Scanner(new File("Sample - Superstore.csv"));
+
+            int i = 0;
+
+            while (csvscanner.hasNextLine() ){
+                String line = csvscanner.nextLine();
+                String[] split = line.split(";");
+
+                if (i != 0) {
+                    double price = Double.parseDouble(split[1].replace(",", "."));
+                    Produkt produkt = new Produkt(split[0], price);
+                    produkts.add(produkt);
+                }
+                i++;
+            }
+            csvscanner.close();
+            // System.out.println( produkts);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return produkts;
     }
 
 }
