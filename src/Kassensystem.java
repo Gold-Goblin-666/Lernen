@@ -45,8 +45,9 @@ public class Kassensystem {
                 String nameProdukt = scanner.nextLine();
                 Produkt produkt = findProduktInList(nameProdukt);
 
-                // Findproduktinlist == soll produkt in der Liste finden
-                // ausgeben, welches Produkt mit dem Namen vorhanden sind
+                // findProduktInList == soll produkte in der Liste finden,
+                // die mit dem gleichen anfange, wie das was man in die Konsole eingegeben hat
+                // und danach ausgeben, welches Produkt mit dem Namen vorhanden sind
                 // xerox als bsp
 
 
@@ -93,6 +94,12 @@ public class Kassensystem {
         System.out.println("Heutiger gesammter verkauf : " + rundenAllesEnde + "€");
 
         scanner.close();
+
+    }
+
+    private static Produkt findProduktInList(String nameProdukt) {
+
+
 
     }
 
