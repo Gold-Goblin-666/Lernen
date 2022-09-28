@@ -14,7 +14,7 @@ public class Kassensystem {
 
         List<Produkt> produkts = new ArrayList<>();
 
-        extracted(produkts);
+        csvreader(produkts);
 
         List<Kassenbon> bons = new ArrayList<>();
 
@@ -85,7 +85,7 @@ public class Kassensystem {
 
     }
 
-    private static List<Produkt> extracted(List<Produkt> produkts) {
+    private static List<Produkt> csvreader(List<Produkt> produkts) {
         try{
             Scanner csvscanner = new Scanner(new File("CSVKassenbon.csv"));
 
