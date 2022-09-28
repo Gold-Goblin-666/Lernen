@@ -25,31 +25,31 @@ public class Kassensystem {
         boolean produktefertig;
 
 
-        while (kassiererfertig == false ){
+        while (kassiererfertig == false) {
 
             Kassenbon bon = new Kassenbon();
 
             System.out.println("Nächster Kunde [Y/N]");
             String naechsterKunde = scanner.nextLine();
 
-            if (naechsterKunde.equals("N")){
+            if (naechsterKunde.equals("N")) {
                 produktefertig = true;
                 kassiererfertig = true;
             } else {
                 produktefertig = false;
             }
 
-            while ( produktefertig == false ) {
+            while (produktefertig == false) {
 
                 System.out.println(" welches Produkt haben sie gekauft ? ");
                 String nameProdukt = scanner.nextLine();
+
                 Produkt produkt = findProduktInList(nameProdukt);
 
                 // findProduktInList == soll produkte in der Liste finden,
                 // die mit dem gleichen anfange, wie das was man in die Konsole eingegeben hat
                 // und danach ausgeben, welches Produkt mit dem Namen vorhanden sind
                 // xerox als bsp
-
 
 
                 if (!(nameProdukt.isEmpty())) {
@@ -67,21 +67,19 @@ public class Kassensystem {
                     System.out.println(nameProdukt + " " + anzahlProdukt);
 
 
-
-
                     Rechnungsposition rp = new Rechnungsposition(produkt, anzahlProdukt);
                     bon.positionen.add(rp);
 
                 } else {
                     produktefertig = true;
-                    System.out.println( " wir sind fertig "  + '\n'+ '\n'+ '\n');
+                    System.out.println(" wir sind fertig " + '\n' + '\n' + '\n');
 
                 }
             }
 
             //System.out.println(bon.toString());
 
-            if (produktefertig == true && kassiererfertig == false){
+            if (produktefertig == true && kassiererfertig == false) {
 
                 double gesammt = bon.printIt(produkts);
                 alles = alles + gesammt;
@@ -89,7 +87,7 @@ public class Kassensystem {
             }
         }
 
-        String rundenAllesEnde =String.format("%.2f",alles);
+        String rundenAllesEnde = String.format("%.2f", alles);
 
         System.out.println("Heutiger gesammter verkauf : " + rundenAllesEnde + "€");
 
@@ -97,19 +95,76 @@ public class Kassensystem {
 
     }
 
-    private static Produkt findProduktInList(String nameProdukt) {
+    private static Produkt findProduktInList(String nameProdukt, List<Produkt> produkts) {
+
+        List< Produkt>matchesProdukt = new ArrayList<>();
+
+
+        for (Produkt p : produkts) {
+
+            if (p.getName().contains(nameProdukt)) {
+
+                matchesProdukt.add(p);
+
+            } else {
+                System.out.println(nameProdukt + "ist keines unserer Produkte");
+            }
+        }
+
+        if (matchesProdukt.size() == 1 ){
+
+            System.out.println( "Wir haben ein produkt mit diesem namen: ");
+
+            System.out.println(matchesProdukt);
+
+
+
+
+        } else if (matchesProdukt.size() > 1 ){
+
+            System.out.println(" Wir haben mehrere Produkte mit diesem namen:");
+
+            for (int m = 0 ; m <= matchesProdukt.size(); m++ ){
+                System.out.print( m );
+                System.out.println(matchesProdukt);
+            }
+
+            System.out.println("Welches meinen sie ? ");
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
     }
 
+
     private static List<Produkt> csvreaderlong(List<Produkt> produkts) {
-        try{
+        try {
             Scanner csvscanner = new Scanner(new File("Sample - Superstore - utf8.csv"));
 
             int i = 0;
 
-            while (csvscanner.hasNextLine() ){
+            while (csvscanner.hasNextLine()) {
                 String line = csvscanner.nextLine();
 
                 //sonderzeichen ersetzen
@@ -119,7 +174,7 @@ public class Kassensystem {
                 if (i != 0) {
 
                     double price = Double.parseDouble(split[4]);
-                    Produkt produkt = new Produkt(split[0],split[1],split[2],split[3],price);
+                    Produkt produkt = new Produkt(split[0], split[1], split[2], split[3], price);
                     produkts.add(produkt);
                 }
                 System.out.println(i);
