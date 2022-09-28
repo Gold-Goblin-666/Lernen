@@ -14,7 +14,7 @@ public class Kassensystem {
 
         List<Produkt> produkts = new ArrayList<>();
 
-        csvreader(produkts);
+        //csvreader(produkts);
         csvreaderlong(produkts);
 
         List<Kassenbon> bons = new ArrayList<>();
@@ -85,7 +85,7 @@ public class Kassensystem {
         scanner.close();
 
     }
-
+/*
     private static List<Produkt> csvreader(List<Produkt> produkts) {
         try{
             Scanner csvscanner = new Scanner(new File("CSVKassenbon.csv"));
@@ -110,7 +110,7 @@ public class Kassensystem {
         }
         return produkts;
     }
-
+*/
 
 
 
@@ -140,14 +140,24 @@ public class Kassensystem {
 
             while (csvscanner.hasNextLine() ){
                 String line = csvscanner.nextLine();
+
+                //sonderzeichen ersetzen
+
+
+
+
+
                 String[] split = line.split(";");
 
                 if (i != 0) {
-                    double price = Double.parseDouble(split[1].replace(",", "."));
-                    Produkt produkt = new Produkt(split[0], price);
+
+                    double price = Double.parseDouble(split[4]);
+                    Produkt produkt = new Produkt(split[0],split[1],split[2],split[3],price);
                     produkts.add(produkt);
                 }
+                System.out.println(i);
                 i++;
+
             }
             csvscanner.close();
             // System.out.println( produkts);
