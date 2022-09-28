@@ -44,7 +44,7 @@ public class Kassensystem {
                 System.out.println(" welches Produkt haben sie gekauft ? ");
                 String nameProdukt = scanner.nextLine();
 
-                Produkt produkt = findProduktInList(nameProdukt);
+                Produkt produkt = findProduktInList(nameProdukt,produkts);
 
                 // findProduktInList == soll produkte in der Liste finden,
                 // die mit dem gleichen anfange, wie das was man in die Konsole eingegeben hat
@@ -98,6 +98,7 @@ public class Kassensystem {
     private static Produkt findProduktInList(String nameProdukt, List<Produkt> produkts) {
 
         List< Produkt>matchesProdukt = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
 
 
         for (Produkt p : produkts) {
@@ -107,7 +108,6 @@ public class Kassensystem {
                 matchesProdukt.add(p);
 
             } else {
-                System.out.println(nameProdukt + "ist keines unserer Produkte");
             }
         }
 
@@ -117,6 +117,8 @@ public class Kassensystem {
 
             System.out.println(matchesProdukt);
 
+            return  matchesProdukt.get(0);
+
 
 
 
@@ -125,36 +127,27 @@ public class Kassensystem {
             System.out.println(" Wir haben mehrere Produkte mit diesem namen:");
 
             for (int m = 0 ; m <= matchesProdukt.size(); m++ ){
-                System.out.print( m );
-                System.out.println(matchesProdukt);
+                System.out.print( m + "   " + matchesProdukt.get(m).getName() );
+
+                System.out.println(m);
+
             }
 
             System.out.println("Welches meinen sie ? ");
 
+            int welchesProdukt = scanner.nextInt();
 
+            Produkt produktGewaehlt = matchesProdukt.get(welchesProdukt);
+
+            System.out.println("Sie haben das Produkt : " + produktGewaehlt + " ausgewählt");
+
+            return  produktGewaehlt;
 
 
 
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        return null;
     }
 
 
