@@ -43,6 +43,13 @@ public class Kassensystem {
 
                 System.out.println(" welches Produkt haben sie gekauft ? ");
                 String nameProdukt = scanner.nextLine();
+                Produkt produkt = findProduktInList(nameProdukt);
+
+                // Findproduktinlist == soll produkt in der Liste finden
+                // ausgeben, welches Produkt mit dem Namen vorhanden sind
+                // xerox als bsp
+
+
 
                 if (!(nameProdukt.isEmpty())) {
 
@@ -58,7 +65,10 @@ public class Kassensystem {
 
                     System.out.println(nameProdukt + " " + anzahlProdukt);
 
-                    Rechnungsposition rp = new Rechnungsposition(nameProdukt, anzahlProdukt);
+
+
+
+                    Rechnungsposition rp = new Rechnungsposition(produkt, anzahlProdukt);
                     bon.positionen.add(rp);
 
                 } else {
@@ -85,52 +95,6 @@ public class Kassensystem {
         scanner.close();
 
     }
-/*
-    private static List<Produkt> csvreader(List<Produkt> produkts) {
-        try{
-            Scanner csvscanner = new Scanner(new File("CSVKassenbon.csv"));
-
-            int i = 0;
-
-            while (csvscanner.hasNextLine() ){
-                String line = csvscanner.nextLine();
-                String[] split = line.split(";");
-
-                if (i != 0) {
-                    double price = Double.parseDouble(split[1].replace(",", "."));
-                    Produkt produkt = new Produkt(split[0], price);
-                    produkts.add(produkt);
-                }
-                i++;
-            }
-            csvscanner.close();
-           // System.out.println( produkts);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        return produkts;
-    }
-*/
-
-
-
-    static Double getPrice(String name, List<Produkt> produkts){
-
-        for ( int i = 0 ; i < produkts.size() ; i ++ ) {
-
-            Produkt produkt = produkts.get(i);
-
-            if( produkt.getName().equals(name)){
-
-                return produkt.getPreis();
-            }
-        }
-        return null;
-    }
-
-
-
-
 
     private static List<Produkt> csvreaderlong(List<Produkt> produkts) {
         try{

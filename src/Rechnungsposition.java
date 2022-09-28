@@ -1,19 +1,19 @@
 public class Rechnungsposition {
 
-    String name;
+    Produkt produkt;
     Integer anzahl;
 
-    public Rechnungsposition(String name, Integer anzahl) {
-        this.name = name;
+    public Rechnungsposition(Produkt produkt, Integer anzahl) {
+        this.produkt = produkt;
         this.anzahl = anzahl;
     }
 
-    public String getName() {
-        return name;
+    public Produkt getProdukt() {
+        return produkt;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProdukt(Produkt produkt) {
+        this.produkt = produkt;
     }
 
     public Integer getAnzahl() {
@@ -24,13 +24,17 @@ public class Rechnungsposition {
         this.anzahl = anzahl;
     }
 
+    public double getPrice(){
+        return anzahl * produkt.getPreis();
+    }
+
 
 
 
 
     @Override
     public String toString() {
-        return anzahl+ " * " + name ;
+        return anzahl+ " * " + produkt.getName()  ;
     }
 }
 

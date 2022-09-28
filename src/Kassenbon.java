@@ -28,7 +28,7 @@ public class Kassenbon {
 
             Rechnungsposition position = positionen.get(i);
 
-            double preis = Kassensystem.getPrice(position.getName(), produkts );
+            double preis = position.getPrice();
 
             String rundenpreis =String.format("%.2f",preis);
 
