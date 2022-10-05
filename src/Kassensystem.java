@@ -52,7 +52,7 @@ public class Kassensystem {
                 // xerox als bsp
 
 
-                if (!(nameProdukt.equals("fertig"))) {
+                if (!(nameProdukt.equals(""))) {
 
                     System.out.println(" Wie viel haben sie von dem Produkt gekauft ? ");
 
@@ -107,6 +107,7 @@ public class Kassensystem {
 
                 matchesProdukt.add(p);
 
+
             } else {
             }
         }
@@ -127,9 +128,13 @@ public class Kassensystem {
             System.out.println(" Wir haben mehrere Produkte mit diesem namen:");
 
             for (int m = 0 ; m < matchesProdukt.size(); m++ ){
-                System.out.print( m + "   " + matchesProdukt.get(m).getName() );
 
-                System.out.println(m);
+
+                double priceallgemein = matchesProdukt.get(m).getPreis();
+                String pricepdodukt = String.format("%.2f",priceallgemein);
+
+
+                System.out.println( m + "   " + matchesProdukt.get(m).getName() + "  " +pricepdodukt + "€");
 
             }
 

@@ -46,7 +46,7 @@ public class Kassenbon {
             String positoinenString = positionen.get(i).toString();
 
             int length = rundenMehrere.length();
-            int lenghtpreis = preisLaenge.length();
+            int lenghtpreis = rundenpreis.length();
             int lenghtPositionen = positoinenString.length();
             int eurlenght = eur.length();
 
