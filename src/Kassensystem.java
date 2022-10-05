@@ -52,7 +52,7 @@ public class Kassensystem {
                 // xerox als bsp
 
 
-                if (!(nameProdukt.isEmpty())) {
+                if (!(nameProdukt.equals("fertig"))) {
 
                     System.out.println(" Wie viel haben sie von dem Produkt gekauft ? ");
 
@@ -64,7 +64,7 @@ public class Kassensystem {
 
                     }
 
-                    System.out.println(nameProdukt + " " + anzahlProdukt);
+                    System.out.println(produkt.getName() + " " + anzahlProdukt);
 
 
                     Rechnungsposition rp = new Rechnungsposition(produkt, anzahlProdukt);
@@ -98,12 +98,12 @@ public class Kassensystem {
     private static Produkt findProduktInList(String nameProdukt, List<Produkt> produkts) {
 
         List< Produkt>matchesProdukt = new ArrayList<>();
-        Scanner scanner = new Scanner(System.in);
+        Scanner scannerprod = new Scanner(System.in);
 
 
         for (Produkt p : produkts) {
 
-            if (p.getName().contains(nameProdukt)) {
+            if (p.getName().contains(nameProdukt) && !(nameProdukt.equals(""))) {
 
                 matchesProdukt.add(p);
 
@@ -126,7 +126,7 @@ public class Kassensystem {
 
             System.out.println(" Wir haben mehrere Produkte mit diesem namen:");
 
-            for (int m = 0 ; m <= matchesProdukt.size(); m++ ){
+            for (int m = 0 ; m < matchesProdukt.size(); m++ ){
                 System.out.print( m + "   " + matchesProdukt.get(m).getName() );
 
                 System.out.println(m);
@@ -135,11 +135,11 @@ public class Kassensystem {
 
             System.out.println("Welches meinen sie ? ");
 
-            int welchesProdukt = scanner.nextInt();
+            int welchesProdukt = scannerprod.nextInt();
 
             Produkt produktGewaehlt = matchesProdukt.get(welchesProdukt);
 
-            System.out.println("Sie haben das Produkt : " + produktGewaehlt + " ausgewählt");
+            System.out.println("Sie haben das Produkt : " + produktGewaehlt.getName() + " ausgewählt");
 
             return  produktGewaehlt;
 
@@ -170,7 +170,7 @@ public class Kassensystem {
                     Produkt produkt = new Produkt(split[0], split[1], split[2], split[3], price);
                     produkts.add(produkt);
                 }
-                System.out.println(i);
+                //System.out.println(i);
                 i++;
 
             }
