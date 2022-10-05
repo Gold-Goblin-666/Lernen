@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5b722ad3-cc90-4c03-a5a4-b3841a7075f1" name="Changes" comment="05.10.2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Kassenbon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kassenbon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sample - Superstore - utf8.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Sample - Superstore - utf8.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,13 +80,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1658996036519</updated>
-    </task>
-    <task id="LOCAL-00012" summary="kassenbon">
-      <created>1660210691893</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1660210691893</updated>
     </task>
     <task id="LOCAL-00013" summary="kassenbon">
       <created>1660212477304</created>
@@ -424,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664962486213</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="05.10.2022">
+      <created>1664969235125</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1664969235125</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
