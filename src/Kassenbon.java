@@ -20,6 +20,8 @@ public class Kassenbon {
         double gesammt = 0.0;
         String datumzeit = new SimpleDateFormat("dd/MM/yyyy HH:mm").format(Calendar.getInstance().getTime());
 
+        String eur = " EUR";
+
 
         System.out.println( "Kassenbon" + '\n' + "kasse 1 " + '\n' + datumzeit + '\n' + "--------------------------------------------------------------------------------------------------------------------------------" );
 
@@ -32,7 +34,7 @@ public class Kassenbon {
 
             String rundenpreis =String.format("%.2f",preis);
 
-            System.out.print(rundenpreis + " EUR");
+            System.out.print(rundenpreis + eur);
 
 
             double preisMehrere = preis * position.anzahl;
@@ -46,16 +48,17 @@ public class Kassenbon {
             int length = rundenMehrere.length();
             int lenghtpreis = preisLaenge.length();
             int lenghtPositionen = positoinenString.length();
+            int eurlenght = eur.length();
 
 
-            int leerzeichenMitte = 128-4-1-4- lenghtPositionen - lenghtpreis - length ;
+            int leerzeichenMitte = 128-4-1- lenghtPositionen - lenghtpreis - length - eurlenght ;
 
             String z = "";
 
             for(int b=0; b<leerzeichenMitte; b++){
                 z = z + " ";
             }
-            System.out.println(z + rundenMehrere + " EUR");
+            System.out.println(z + rundenMehrere + eur);
 
             gesammt = gesammt + preisMehrere;
 
@@ -65,7 +68,7 @@ public class Kassenbon {
 
         String rundenalles =String.format("%.2f",gesammt);
 
-        int leerzeichenEnde = 128-rundenalles.length()-4;
+        int leerzeichenEnde = 128-rundenalles.length() - eur.length();
 
         String t = "";
 
@@ -73,7 +76,7 @@ public class Kassenbon {
             t = t + " ";
         }
 
-        System.out.println(t + rundenalles + " EUR");
+        System.out.println(t + rundenalles + eur);
 
         System.out.println(" " + '\n'+'\n');
 

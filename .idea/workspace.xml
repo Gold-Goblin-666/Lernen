@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b722ad3-cc90-4c03-a5a4-b3841a7075f1" name="Changes" comment="28.09.2022">
+    <list default="true" id="5b722ad3-cc90-4c03-a5a4-b3841a7075f1" name="Changes" comment="05.10.2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Kassenbon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kassenbon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Kassensystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kassensystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,13 +80,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1658996036519</updated>
-    </task>
-    <task id="LOCAL-00011" summary="kassenbon">
-      <created>1660209414261</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1660209414261</updated>
     </task>
     <task id="LOCAL-00012" summary="kassenbon">
       <created>1660210691893</created>
@@ -425,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664374546164</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="05.10.2022">
+      <created>1664962486213</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1664962486213</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -444,7 +443,8 @@
     <MESSAGE value="Datum Zeit" />
     <MESSAGE value="21.09.2022" />
     <MESSAGE value="28.09.2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="28.09.2022" />
+    <MESSAGE value="05.10.2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="05.10.2022" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -470,15 +470,9 @@
           <option name="timeStamp" value="17" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Kassensystem.java</url>
-          <line>124</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <condition expression="m==62" language="JAVA" />
-          <url>file://$PROJECT_DIR$/src/Kassensystem.java</url>
-          <line>128</line>
-          <option name="timeStamp" value="25" />
+          <url>file://$PROJECT_DIR$/src/Kassenbon.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -487,5 +481,8 @@
         <PinnedItemInfo parentTag="java.util.Scanner" memberName="buf" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Lernen$Kassensystem.ic" NAME="Kassensystem Coverage Results" MODIFIED="1664962683215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
