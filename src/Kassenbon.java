@@ -25,9 +25,17 @@ public class Kassenbon {
         int breitebon = 128;
 
 
-        //Aufgabe:
+        //##########################################################################################################################################
+        // Aufgabe:
         //Wenn string zu lang für eine Spalte,
         //diesen auf mehrere Spalten aufteilen
+
+        // Scheuen wie viel plate in spalte, ist
+        // Zeichenanzahl im String durch Zeichen frei in Spalte => auf geraden teil aufrunden = Spalten die ich brauche
+        // String mit Substring auf die Spalten aufzeieln
+        // z.b. 0 bis 50; 51 bis 100; 101 bis rest ( 3 Zeielen mit z.B. gesammt 128 Zeichen
+        // ##########################################################################################################################################
+
 
 
 
@@ -38,65 +46,17 @@ public class Kassenbon {
 
 
 
-
+            System.out.println("#####################################################################");
 
             String produkthier = positionen.get(i).getProdukt().getName();
 
-            String[] split = produkthier.split(" ");
-
-            System.out.println("#######################");
 
 
-            if (split.length > 9){
-                System.out.println(split.length);
 
-            }
 
-            else if (split.length == 9){
-                System.out.println(split[0] +" "+ split[1]  +" "+ split[2]);
-                System.out.println(split[3] +" "+ split[4] +" "+ split[5]);
-                System.out.println(split[6] +" "+ split[7] +" "+ split[8]);
 
-            } else  if (split.length == 8){
-                System.out.println(split[0] +" "+ split[1]  +" "+ split[2]);
-                System.out.println(split[3] +" "+ split[4] +" "+ split[5]);
-                System.out.println(split[6] +" "+ split[7]);
 
-            }else  if (split.length == 7){
-                System.out.println(split[0] +" "+ split[1]  +" "+ split[2]);
-                System.out.println(split[3] +" "+ split[4] +" "+ split[5]);
-                System.out.println(split[6]);
-
-            } else  if (split.length == 6){
-                System.out.println(split[0] +" "+ split[1]  +" "+ split[2]);
-                System.out.println(split[3] +" "+ split[4] +" "+ split[5]);
-
-            }else  if (split.length == 5){
-                System.out.println(split[0] +" "+ split[1]  +" "+ split[2]);
-                System.out.println(split[3] +" "+ split[4]);
-
-            } else  if (split.length == 4){
-                System.out.println(split[0] +" "+ split[1]  +" "+ split[2]);
-                System.out.println(split[3]);
-
-            }else  if (split.length == 3){
-                System.out.println(split[0] +" "+ split[1]  +" "+ split[2]);
-
-            } else  if (split.length == 2){
-                System.out.println(split[0] +" "+ split[1]);
-
-            }else  if (split.length == 1){
-                System.out.println(split[0]);
-
-            }else  if (split.length == 0){
-                System.out.println(" etwas ist falsch gelaufen");
-
-            }else {
-                System.out.println(" etwas ist richtig falsch gelaufen");
-            }
-
-            System.out.println("#######################");
-
+            System.out.println("#####################################################################");
 
 
 
