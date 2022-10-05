@@ -23,6 +23,12 @@ public class Kassenbon {
         String eur = " EUR";
 
 
+        //Aufgabe:
+        //Wenn string zu lang für eine Spalte,
+        //diesen auf mehrere Spalten aufteilen
+
+
+
         System.out.println( "Kassenbon" + '\n' + "kasse 1 " + '\n' + datumzeit + '\n' + "--------------------------------------------------------------------------------------------------------------------------------" );
 
         for( int i = 0 ; i < positionen.size() ; i++ ){
