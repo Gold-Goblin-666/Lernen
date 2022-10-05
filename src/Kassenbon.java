@@ -22,6 +22,8 @@ public class Kassenbon {
 
         String eur = " EUR";
 
+        int breitebon = 128;
+
 
         //Aufgabe:
         //Wenn string zu lang für eine Spalte,
@@ -29,9 +31,80 @@ public class Kassenbon {
 
 
 
-        System.out.println( "Kassenbon" + '\n' + "kasse 1 " + '\n' + datumzeit + '\n' + "--------------------------------------------------------------------------------------------------------------------------------" );
+        System.out.println( "Kassenbon" + '\n' + "kasse 1 " + '\n' + datumzeit + '\n' + "----------------------------------------------------------------");
 
         for( int i = 0 ; i < positionen.size() ; i++ ){
+
+
+
+
+
+
+            String produkthier = positionen.get(i).getProdukt().getName();
+
+            String[] split = produkthier.split(" ");
+
+            System.out.println("#######################");
+
+
+            if (split.length > 9){
+                System.out.println(split.length);
+
+            }
+
+            else if (split.length == 9){
+                System.out.println(split[0] +" "+ split[1]  +" "+ split[2]);
+                System.out.println(split[3] +" "+ split[4] +" "+ split[5]);
+                System.out.println(split[6] +" "+ split[7] +" "+ split[8]);
+
+            } else  if (split.length == 8){
+                System.out.println(split[0] +" "+ split[1]  +" "+ split[2]);
+                System.out.println(split[3] +" "+ split[4] +" "+ split[5]);
+                System.out.println(split[6] +" "+ split[7]);
+
+            }else  if (split.length == 7){
+                System.out.println(split[0] +" "+ split[1]  +" "+ split[2]);
+                System.out.println(split[3] +" "+ split[4] +" "+ split[5]);
+                System.out.println(split[6]);
+
+            } else  if (split.length == 6){
+                System.out.println(split[0] +" "+ split[1]  +" "+ split[2]);
+                System.out.println(split[3] +" "+ split[4] +" "+ split[5]);
+
+            }else  if (split.length == 5){
+                System.out.println(split[0] +" "+ split[1]  +" "+ split[2]);
+                System.out.println(split[3] +" "+ split[4]);
+
+            } else  if (split.length == 4){
+                System.out.println(split[0] +" "+ split[1]  +" "+ split[2]);
+                System.out.println(split[3]);
+
+            }else  if (split.length == 3){
+                System.out.println(split[0] +" "+ split[1]  +" "+ split[2]);
+
+            } else  if (split.length == 2){
+                System.out.println(split[0] +" "+ split[1]);
+
+            }else  if (split.length == 1){
+                System.out.println(split[0]);
+
+            }else  if (split.length == 0){
+                System.out.println(" etwas ist falsch gelaufen");
+
+            }else {
+                System.out.println(" etwas ist richtig falsch gelaufen");
+            }
+
+            System.out.println("#######################");
+
+
+
+
+
+
+
+
+
             System.out.print(positionen.get(i) + " ");
 
             Rechnungsposition position = positionen.get(i);
@@ -57,7 +130,7 @@ public class Kassenbon {
             int eurlenght = eur.length();
 
 
-            int leerzeichenMitte = 128-4-1- lenghtPositionen - lenghtpreis - length - eurlenght ;
+            int leerzeichenMitte = breitebon-4-1- lenghtPositionen - lenghtpreis - length - eurlenght ;
 
             String z = "";
 
@@ -70,11 +143,11 @@ public class Kassenbon {
 
         }
 
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------");
 
         String rundenalles =String.format("%.2f",gesammt);
 
-        int leerzeichenEnde = 128-rundenalles.length() - eur.length();
+        int leerzeichenEnde = breitebon-rundenalles.length() - eur.length();
 
         String t = "";
 
@@ -90,3 +163,5 @@ public class Kassenbon {
         return gesammt;
     }
 }
+//128: "--------------------------------------------------------------------------------------------------------------------------------"
+// 64: "----------------------------------------------------------------"
