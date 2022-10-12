@@ -57,28 +57,30 @@ public class Kassenbon {
 
             } else {
 
-                for (int n = 1; n < 5 ; n++){
+                System.out.println(produkthier);
 
-                    int h = 5;
+                int m;
 
-                    for (int m = 0; m < h * n; m = m+h){
+                for (m = 0 ; m +25 < produkthier.length(); m = m +25){
 
-                        System.out.println("m = "+m);
+                    System.out.println(produkthier.substring(m,m+25));
 
-                        System.out.println(produkthier.substring(m,(h*n)));
-
-
-
-
-
-
-
-
-
-
-
-                    }
                 }
+                System.out.println(produkthier.substring(m));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             }
             //System.out.println(produkthier);
 

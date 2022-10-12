@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b722ad3-cc90-4c03-a5a4-b3841a7075f1" name="Changes" comment="05.10.2022">
+    <list default="true" id="5b722ad3-cc90-4c03-a5a4-b3841a7075f1" name="Changes" comment="12.10.2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Kassenbon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kassenbon.java" afterDir="false" />
     </list>
@@ -80,13 +80,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1658996036519</updated>
-    </task>
-    <task id="LOCAL-00020" summary="kassenbon">
-      <created>1661420040168</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1661420040168</updated>
     </task>
     <task id="LOCAL-00021" summary="kassenbon">
       <created>1661420637756</created>
@@ -424,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664977677956</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="12.10.2022">
+      <created>1665563042121</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1665563042121</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -444,7 +444,8 @@
     <MESSAGE value="21.09.2022" />
     <MESSAGE value="28.09.2022" />
     <MESSAGE value="05.10.2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="05.10.2022" />
+    <MESSAGE value="12.10.2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="12.10.2022" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
