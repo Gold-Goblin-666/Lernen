@@ -49,10 +49,12 @@ public class Kassenbon {
         String produkthier = positionen.get(i).getProdukt().getName();
 
 
+
+
+
+
         if (produkthier.length() < 32) {
-
             System.out.println(produkthier);
-
         } else {
 
             String zeichenkette = produkthier;
