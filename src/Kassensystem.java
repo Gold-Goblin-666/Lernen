@@ -81,7 +81,7 @@ public class Kassensystem {
 
             if (produktefertig == true && kassiererfertig == false) {
 
-                double gesammt = bon.printIt(produkts);
+                double gesammt = bon.printIt();
                 alles = alles + gesammt;
 
             }
