@@ -46,17 +46,49 @@ public class Kassenbon {
 
 
 
-            System.out.println("#####################################################################");
+            System.out.println("################################################################");
 
             String produkthier = positionen.get(i).getProdukt().getName();
 
 
+            if (produkthier.length() < 25){
+
+                System.out.println(produkthier);
+
+            } else {
+
+                for (int n = 1; n < 5 ; n++){
+
+                    int h = 5;
+
+                    for (int m = 0; m < h * n; m = m+h){
+
+                        System.out.println("m = "+m);
+
+                        System.out.println(produkthier.substring(m,(h*n)));
 
 
 
 
 
-            System.out.println("#####################################################################");
+
+
+
+
+
+
+                    }
+                }
+            }
+            //System.out.println(produkthier);
+
+
+
+
+
+
+
+            System.out.println("################################################################");
 
 
 
