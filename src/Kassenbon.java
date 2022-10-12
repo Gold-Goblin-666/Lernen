@@ -56,9 +56,12 @@ public class Kassenbon {
 
                 int n;
 
+
                 for (n = 0; n < produkthier.length(); n++) {
                     if (Character.isSpaceChar(produkthier.charAt(n))) {
                         System.out.println(n);
+
+
                     }
                 }
 
@@ -70,9 +73,9 @@ public class Kassenbon {
 /*
                 int m;
 
-                for (m = 0 ; m +25 < produkthier.length(); m = m +25){
+                for (m = 0 ; m +32 < produkthier.length(); m = m +32){
 
-                    System.out.println(produkthier.substring(m,m+25));
+                    System.out.println(produkthier.substring(m,m+32));
 
                 }
                 System.out.println(produkthier.substring(m));
