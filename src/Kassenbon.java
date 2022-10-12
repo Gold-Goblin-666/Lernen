@@ -10,7 +10,6 @@ public class Kassenbon {
     public List<Rechnungsposition> positionen;
 
 
-
     public Kassenbon() {
         positionen = new ArrayList<Rechnungsposition>();
     }
@@ -37,13 +36,9 @@ public class Kassenbon {
         // ##########################################################################################################################################
 
 
+        System.out.println("Kassenbon" + '\n' + "kasse 1 " + '\n' + datumzeit + '\n' + "----------------------------------------------------------------");
 
-
-        System.out.println( "Kassenbon" + '\n' + "kasse 1 " + '\n' + datumzeit + '\n' + "----------------------------------------------------------------");
-
-        for( int i = 0 ; i < positionen.size() ; i++ ){
-
-
+        for (int i = 0; i < positionen.size(); i++) {
 
 
             System.out.println("################################################################");
@@ -51,7 +46,7 @@ public class Kassenbon {
             String produkthier = positionen.get(i).getProdukt().getName();
 
 
-            if (produkthier.length() < 25){
+            if (produkthier.length() < 25) {
 
                 System.out.println(produkthier);
 
@@ -59,6 +54,20 @@ public class Kassenbon {
 
                 System.out.println(produkthier);
 
+                int n;
+
+                for (n = 0; n < produkthier.length(); n++) {
+                    if (Character.isSpaceChar(produkthier.charAt(n))) {
+                        System.out.println(n);
+                    }
+                }
+
+
+                System.out.println(produkthier.length());
+
+
+
+/*
                 int m;
 
                 for (m = 0 ; m +25 < produkthier.length(); m = m +25){
@@ -80,82 +89,73 @@ public class Kassenbon {
 
 
 
-
+*/
             }
             //System.out.println(produkthier);
 
 
 
+                System.out.println("################################################################");
 
 
+                System.out.print(positionen.get(i) + " ");
+
+                Rechnungsposition position = positionen.get(i);
+
+                double preis = position.getPrice();
+
+                String rundenpreis = String.format("%.2f", preis);
+
+                System.out.print(rundenpreis + eur);
 
 
-            System.out.println("################################################################");
+                double preisMehrere = preis * position.anzahl;
+
+                String rundenMehrere = String.format("%.2f", preisMehrere);
+
+                String preisLaenge = Double.toString(preis);
+
+                String positoinenString = positionen.get(i).toString();
+
+                int length = rundenMehrere.length();
+                int lenghtpreis = rundenpreis.length();
+                int lenghtPositionen = positoinenString.length();
+                int eurlenght = eur.length();
 
 
+                int leerzeichenMitte = breitebon - 4 - 1 - lenghtPositionen - lenghtpreis - length - eurlenght;
 
+                String z = "";
 
+                for (int b = 0; b < leerzeichenMitte; b++) {
+                    z = z + " ";
+                }
+                System.out.println(z + rundenMehrere + eur);
 
+                gesammt = gesammt + preisMehrere;
 
-
-
-            System.out.print(positionen.get(i) + " ");
-
-            Rechnungsposition position = positionen.get(i);
-
-            double preis = position.getPrice();
-
-            String rundenpreis =String.format("%.2f",preis);
-
-            System.out.print(rundenpreis + eur);
-
-
-            double preisMehrere = preis * position.anzahl;
-
-            String rundenMehrere = String.format("%.2f",preisMehrere);
-
-            String preisLaenge =Double.toString(preis);
-
-            String positoinenString = positionen.get(i).toString();
-
-            int length = rundenMehrere.length();
-            int lenghtpreis = rundenpreis.length();
-            int lenghtPositionen = positoinenString.length();
-            int eurlenght = eur.length();
-
-
-            int leerzeichenMitte = breitebon-4-1- lenghtPositionen - lenghtpreis - length - eurlenght ;
-
-            String z = "";
-
-            for(int b=0; b<leerzeichenMitte; b++){
-                z = z + " ";
             }
-            System.out.println(z + rundenMehrere + eur);
 
-            gesammt = gesammt + preisMehrere;
+            System.out.println("----------------------------------------------------------------");
 
+            String rundenalles = String.format("%.2f", gesammt);
+
+            int leerzeichenEnde = breitebon - rundenalles.length() - eur.length();
+
+            String t = "";
+
+            for (int i = 0; i < leerzeichenEnde; i++) {
+                t = t + " ";
+            }
+
+            System.out.println(t + rundenalles + eur);
+
+            System.out.println(" " + '\n' + '\n');
+
+
+            return gesammt;
         }
 
-        System.out.println("----------------------------------------------------------------");
-
-        String rundenalles =String.format("%.2f",gesammt);
-
-        int leerzeichenEnde = breitebon-rundenalles.length() - eur.length();
-
-        String t = "";
-
-        for(int i=0; i<leerzeichenEnde; i++){
-            t = t + " ";
-        }
-
-        System.out.println(t + rundenalles + eur);
-
-        System.out.println(" " + '\n'+'\n');
-
-
-        return gesammt;
-    }
 }
 //128: "--------------------------------------------------------------------------------------------------------------------------------"
 // 64: "----------------------------------------------------------------"
