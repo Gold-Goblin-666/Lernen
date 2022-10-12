@@ -16,12 +16,13 @@ public class Kassenbon {
 
     public double printIt(List<Produkt> produkts) {
 
+        int breitebon = 128;
         double gesammt = 0.0;
         String datumzeit = new SimpleDateFormat("dd/MM/yyyy HH:mm").format(Calendar.getInstance().getTime());
 
         String eur = " EUR";
 
-        int breitebon = 128;
+
 
 
         //##########################################################################################################################################
@@ -54,14 +55,9 @@ public class Kassenbon {
 
                 System.out.println(produkthier);
 
-                int n;
-
-
-                for (n = 0; n < produkthier.length(); n++) {
+                for (int n = 0; n < produkthier.length(); n++) {
                     if (Character.isSpaceChar(produkthier.charAt(n))) {
                         System.out.println(n);
-
-
                     }
                 }
 
@@ -94,8 +90,6 @@ public class Kassenbon {
 
 */
             }
-            //System.out.println(produkthier);
-
 
 
                 System.out.println("################################################################");
