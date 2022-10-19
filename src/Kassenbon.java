@@ -48,6 +48,10 @@ public class Kassenbon {
         Rechnungsposition position = positionen.get(i);
         String produkthier = positionen.get(i).getProdukt().getName();
 
+        double preis = positionen.get(i).getPrice();
+        String rundenpreis = String.format("%.2f", preis);
+        int anzahl = positionen.get(i).getAnzahl();
+
 
 
 
@@ -64,7 +68,7 @@ public class Kassenbon {
                 String print_line = zeichenkette.substring(0, split_index);
                 zeichenkette = zeichenkette.substring(split_index);
                 if (isFirstLine) {
-                    System.out.println(positionen.get(i).getAnzahl() + " * " + print_line +"      " + positionen.get(i).getPrice());
+                    System.out.println(anzahl + " * " + print_line +"      " + rundenpreis);
                     isFirstLine = false;
                 } else {
                     System.out.println(print_line);
@@ -72,9 +76,7 @@ public class Kassenbon {
             }
         }
 
-        double preis = position.getPrice();
 
-        String rundenpreis = String.format("%.2f", preis);
 
         double preisMehrere = preis * position.anzahl;
 
