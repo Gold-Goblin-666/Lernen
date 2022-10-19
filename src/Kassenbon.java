@@ -90,9 +90,7 @@ public class Kassenbon {
 
 
         int leerzeichenMitte = breitebon - 4 - 1 - lenghtPositionen - lenghtpreis - length - eurlenght;
-
         String z = "";
-
         for (int b = 0; b < leerzeichenMitte; b++) {
             z = z + " ";
         }
@@ -106,9 +104,7 @@ public class Kassenbon {
         String rundenalles = String.format("%.2f", gesammt);
 
         int leerzeichenEnde = breitebon - rundenalles.length() - eur.length();
-
         String t = "";
-
         for (int k = 0; k < leerzeichenEnde; k++) {
             t = t + " ";
         }
