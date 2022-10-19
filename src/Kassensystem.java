@@ -16,6 +16,7 @@ public class Kassensystem {
         List<Produkt> produkts = new ArrayList<>();
 
         //csvreader(produkts);
+        // jetzt aus SQL
         csvreaderlong(produkts);
 
         List<Kassenbon> bons = new ArrayList<>();
