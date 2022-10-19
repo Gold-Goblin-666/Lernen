@@ -4,7 +4,11 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b722ad3-cc90-4c03-a5a4-b3841a7075f1" name="Changes" comment="Noch Layout usw verbessern&#10;(des Codes)" />
+    <list default="true" id="5b722ad3-cc90-4c03-a5a4-b3841a7075f1" name="Changes" comment="SQL Database">
+      <change afterPath="$PROJECT_DIR$/src/DatabaseProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kassensystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kassensystem.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

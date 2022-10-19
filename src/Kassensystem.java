@@ -1,9 +1,9 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 
 public class Kassensystem {
 
@@ -18,6 +18,7 @@ public class Kassensystem {
         //csvreader(produkts);
         // jetzt aus SQL
         csvreaderlong(produkts);
+
 
         List<Kassenbon> bons = new ArrayList<>();
 
@@ -188,15 +189,4 @@ public class Kassensystem {
         }
         return produkts;
     }
-
-
-
-
-
-
-
-
-
-
-
 }
