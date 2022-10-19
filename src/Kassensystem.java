@@ -1,8 +1,4 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,29 +6,18 @@ import java.util.Scanner;
 
 public class Kassensystem {
 
-    public static void main(String[] args) {
-
-        String url = "jdbc:mysql://localhost:3306/test";
-        String username = "java";
-        String password = "123";
-
-        System.out.println("Connecting database...");
-
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            System.out.println("Database connected!");
-        } catch (SQLException e) {
-            throw new IllegalStateException("Cannot connect the database!", e);
-        }
+    public static void main(String[] args) throws SQLException {
 
         Scanner scanner = new Scanner(System.in);
 
         double alles = 0;
 
-        List<Produkt> produkts = new ArrayList<>();
+        List<Produkt> produkts = ReadSQL();
 
         //csvreader(produkts);
         // jetzt aus SQL
-        csvreaderlong(produkts);
+
+        //csvreaderlong(produkts);
 
 
         List<Kassenbon> bons = new ArrayList<>();
@@ -113,6 +98,39 @@ public class Kassensystem {
 
     }
 
+    private static List<Produkt> ReadSQL()  throws SQLException{
+        String url = "jdbc:mysql://localhost:3306/test";
+        String username = "java";
+        String password = "123";
+        List<Produkt> produkts= new ArrayList<>();
+        System.out.println("Connecting database...");
+
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            System.out.println("Database connected!");
+
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM Produkte ");
+            ResultSet rs = statement.executeQuery();
+
+            //List<User> users = new ArrayList<>();
+
+            while (rs.next()){
+
+                String produktID = rs.getString("Product ID");
+                String category = rs.getString("Category");
+                String subcategory = rs.getString("Sub-Category");
+                String produktname = rs.getString("Product Name");
+                Double price = rs.getDouble("Price");
+
+                Produkt produkt = new Produkt(produktID, category, subcategory, produktname, price);
+                produkts.add(produkt);
+
+            }
+        } catch (SQLException e) {
+            throw new IllegalStateException("Cannot connect the database!", e);
+        }
+        return produkts;
+    }
+
     private static Produkt findProduktInList(String nameProdukt, List<Produkt> produkts) {
 
         List< Produkt>matchesProdukt = new ArrayList<>();
@@ -173,7 +191,7 @@ public class Kassensystem {
         return null;
     }
 
-
+/*
     private static List<Produkt> csvreaderlong(List<Produkt> produkts) {
         try {
             Scanner csvscanner = new Scanner(new File("Sample - Superstore - utf8.csv"));
@@ -204,4 +222,10 @@ public class Kassensystem {
         }
         return produkts;
     }
+*/
+
+
+
+
+
 }

@@ -5,10 +5,13 @@ import java.util.Calendar;
 import java.util.List;
 
 public class Kassenbon {
+        public Long id;
+    public String datumzeit;
 
     public List<Rechnungsposition> positionen;
 
     public Kassenbon() {
+        datumzeit = new SimpleDateFormat("dd/MM/yyyy HH:mm").format(Calendar.getInstance().getTime());
         positionen = new ArrayList<Rechnungsposition>();
     }
 
@@ -17,7 +20,7 @@ public class Kassenbon {
 
 
         double gesammt = 0.0;
-        String datumzeit = new SimpleDateFormat("dd/MM/yyyy HH:mm").format(Calendar.getInstance().getTime());
+
 
 
         String euro = " EUR";
