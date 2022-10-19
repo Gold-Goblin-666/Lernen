@@ -105,7 +105,7 @@ public class Kassenbon {
         System.out.println("----------------------------------------------------------------");
         String rundenGesammt = String.format("%.2f", gesammt);
 
-        int leerzeichenEnde = breitebon - rundenpreis.length() - euro.length();
+        int leerzeichenEnde = breitebon - rundenGesammt.length() - euro.length();
         String t = "";
         for (int k = 0; k < leerzeichenEnde; k++) {
             t = t + " ";
