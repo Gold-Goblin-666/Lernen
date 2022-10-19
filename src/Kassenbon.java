@@ -50,22 +50,19 @@ public class Kassenbon {
 
         double preis = positionen.get(i).getPrice();
         String rundenpreis = String.format("%.2f", preis);
+        int lenghtPreis = rundenpreis.length();
 
         int anzahl = positionen.get(i).getAnzahl();
         int lenghtAnzahl = String.valueOf(anzahl).length();
 
         double preisMehrere = preis * position.anzahl;
         String rundenMehrere = String.format("%.2f", preisMehrere);
-        int lengthMehrere = rundenMehrere.length();
+        int lengthRundenMehrere = rundenMehrere.length();
 
         int lenghtEuro = euro.length();
 
 
-
-
-
-
-        if (produkthier.length() < 32) {
+        if (produkthier.length() <= 32) {
             System.out.println(produkthier);
         } else {
 
@@ -76,47 +73,38 @@ public class Kassenbon {
                 String print_line = zeichenkette.substring(0, split_index);
                 zeichenkette = zeichenkette.substring(split_index);
                 if (isFirstLine) {
-                    System.out.println(anzahl + " * " + print_line +"      " + rundenMehrere + euro);
+
+                    int leerzeichenMitte = breitebon - lenghtAnzahl - 3 - print_line.length() - lengthRundenMehrere - lenghtEuro ;
+                    String z = "";
+                    for (int b = 0; b < leerzeichenMitte; b++) {
+                        z = z + " ";
+                    }
+
+                    System.out.println(anzahl + " * " + print_line  + z +  rundenMehrere + euro);
                     isFirstLine = false;
                 } else {
-                    System.out.println(print_line);
+                    int leerzeichenMitte = lenghtAnzahl + 3 ;
+                    String z = "";
+                    for (int b = 0; b < leerzeichenMitte; b++) {
+                        z = z + " ";
+                    }
+
+                    System.out.println(z + print_line);
                 }
             }
         }
 
-
-        int leerzeichenMitte = breitebon - ;
-        String z = "";
-        for (int b = 0; b < leerzeichenMitte; b++) {
-            z = z + " ";
-        }
-
-
-
-        String positoinenString = positionen.get(i).toString();
-
-
-
-        int lenghtPreis = rundenpreis.length();
-        int lenghtPositionen = positoinenString.length();
-
-
-
-
         gesammt = gesammt + preisMehrere;
-
 
         System.out.println("----------------------------------------------------------------");
 
-        String rundenalles = String.format("%.2f", gesammt);
-
-        int leerzeichenEnde = breitebon - rundenalles.length() - euro.length();
+        int leerzeichenEnde = breitebon - rundenpreis.length() - euro.length();
         String t = "";
         for (int k = 0; k < leerzeichenEnde; k++) {
             t = t + " ";
         }
 
-        System.out.println(t + rundenalles + euro);
+        System.out.println(t + gesammt + euro);
 
         System.out.println(" " + '\n' + '\n');
         return gesammt;
@@ -124,7 +112,7 @@ public class Kassenbon {
 
     private int getSplit(String zeichenkette, int h) {
 
-        if (zeichenkette.length() < h){
+        if (zeichenkette.length() <= h){
             return zeichenkette.length();
         }
 
