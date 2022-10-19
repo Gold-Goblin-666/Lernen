@@ -19,6 +19,7 @@ public class Kassenbon {
         double gesammt = 0.0;
         String datumzeit = new SimpleDateFormat("dd/MM/yyyy HH:mm").format(Calendar.getInstance().getTime());
 
+
         String euro = " EUR";
 
 
@@ -35,72 +36,71 @@ public class Kassenbon {
 
 
         System.out.println("Kassenbon" + '\n' + "kasse 1 " + '\n' + datumzeit + '\n' + "----------------------------------------------------------------");
-        for (int i = 0; i < positionen.size(); i++) {
-            gesammt = printRechnungspositionen(gesammt, euro, i);
-        }
-
+            gesammt = printRechnungspositionen(gesammt, euro);
         return gesammt;
     }
 
-    private double printRechnungspositionen(double gesammt, String euro, int i) {
+    private double printRechnungspositionen(double gesammt, String euro) {
 
         int breitebon = 64;
-        Rechnungsposition position = positionen.get(i);
-        String produkthier = positionen.get(i).getProdukt().getName();
 
-        double preis = positionen.get(i).getPrice();
-        String rundenpreis = String.format("%.2f", preis);
-        int lenghtPreis = rundenpreis.length();
+        for (int loopMiddle = 0; loopMiddle < positionen.size(); loopMiddle = loopMiddle +1) {
 
-        int anzahl = positionen.get(i).getAnzahl();
-        int lenghtAnzahl = String.valueOf(anzahl).length();
+            Rechnungsposition position = positionen.get(loopMiddle);
+            String produkthier = positionen.get(loopMiddle).getProdukt().getName();
 
-        double preisMehrere = preis * position.anzahl;
-        String rundenMehrere = String.format("%.2f", preisMehrere);
-        int lengthRundenMehrere = rundenMehrere.length();
+            double preis = positionen.get(loopMiddle).getPrice();
+            String rundenpreis = String.format("%.2f", preis);
+            int lenghtPreis = rundenpreis.length();
 
-        int lenghtEuro = euro.length();
+            int anzahl = positionen.get(loopMiddle).getAnzahl();
+            int lenghtAnzahl = String.valueOf(anzahl).length();
 
+            double preisMehrere = preis * position.anzahl;
+            String rundenMehrere = String.format("%.2f", preisMehrere);
+            int lengthRundenMehrere = rundenMehrere.length();
 
-        if (produkthier.length() <= 32) {
-            int leerzeichenMitte = breitebon - lenghtAnzahl - 3 - produkthier.length() - lengthRundenMehrere - lenghtEuro ;
-            String z = "";
-            for (int b = 0; b < leerzeichenMitte; b++) {
-                z = z + " ";
-            }
+            int lenghtEuro = euro.length();
 
-            System.out.println(anzahl + " * " + produkthier  + z +  rundenMehrere + euro);
-        } else {
+            if (produkthier.length() <= 32) {
+                int leerzeichenMitte = breitebon - lenghtAnzahl - 3 - produkthier.length() - lengthRundenMehrere - lenghtEuro;
+                String z = "";
+                for (int b = 0; b < leerzeichenMitte; b++) {
+                    z = z + " ";
+                }
 
-            String zeichenkette = produkthier;
-            Boolean isFirstLine = true;
-            while (zeichenkette.length() > 0) {
-                int split_index = getSplit(zeichenkette, 32);
-                String print_line = zeichenkette.substring(0, split_index);
-                zeichenkette = zeichenkette.substring(split_index);
-                if (isFirstLine) {
+                System.out.println(anzahl + " * " + produkthier + z + rundenMehrere + euro);
+            } else {
 
-                    int leerzeichenMitte = breitebon - lenghtAnzahl - 3 - print_line.length() - lengthRundenMehrere - lenghtEuro ;
-                    String z = "";
-                    for (int b = 0; b < leerzeichenMitte; b++) {
-                        z = z + " ";
+                String zeichenkette = produkthier;
+                Boolean isFirstLine = true;
+                while (zeichenkette.length() > 0) {
+                    int split_index = getSplit(zeichenkette, 32);
+                    String print_line = zeichenkette.substring(0, split_index);
+                    zeichenkette = zeichenkette.substring(split_index);
+                    if (isFirstLine) {
+
+                        int leerzeichenMitte = breitebon - lenghtAnzahl - 3 - print_line.length() - lengthRundenMehrere - lenghtEuro;
+                        String z = "";
+                        for (int b = 0; b < leerzeichenMitte; b++) {
+                            z = z + " ";
+                        }
+
+                        System.out.println(anzahl + " * " + print_line + z + rundenMehrere + euro);
+                        isFirstLine = false;
+                    } else {
+                        int leerzeichenMitte = lenghtAnzahl + 3;
+                        String z = "";
+                        for (int b = 0; b < leerzeichenMitte; b++) {
+                            z = z + " ";
+                        }
+
+                        System.out.println(z + print_line);
                     }
-
-                    System.out.println(anzahl + " * " + print_line  + z +  rundenMehrere + euro);
-                    isFirstLine = false;
-                } else {
-                    int leerzeichenMitte = lenghtAnzahl + 3 ;
-                    String z = "";
-                    for (int b = 0; b < leerzeichenMitte; b++) {
-                        z = z + " ";
-                    }
-
-                    System.out.println(z + print_line);
                 }
             }
+            gesammt = gesammt + preisMehrere;
         }
-
-        gesammt = gesammt + preisMehrere;
 
         System.out.println("----------------------------------------------------------------");
         String rundenGesammt = String.format("%.2f", gesammt);

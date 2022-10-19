@@ -41,7 +41,7 @@ public class Kassensystem {
 
             while (produktefertig == false) {
 
-                System.out.println(" welches Produkt haben sie gekauft ? ");
+                System.out.println("welches Produkt haben sie gekauft ? ");
                 String nameProdukt = scanner.nextLine();
 
                 Produkt produkt = findProduktInList(nameProdukt,produkts);
@@ -125,7 +125,7 @@ public class Kassensystem {
 
         } else if (matchesProdukt.size() > 1 ){
 
-            System.out.println(" Wir haben mehrere Produkte mit diesem namen:");
+            System.out.println("Wir haben mehrere Produkte mit diesem namen:");
 
             for (int m = 0 ; m < matchesProdukt.size(); m++ ){
 
