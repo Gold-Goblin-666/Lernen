@@ -63,7 +63,13 @@ public class Kassenbon {
 
 
         if (produkthier.length() <= 32) {
-            System.out.println(produkthier);
+            int leerzeichenMitte = breitebon - lenghtAnzahl - 3 - produkthier.length() - lengthRundenMehrere - lenghtEuro ;
+            String z = "";
+            for (int b = 0; b < leerzeichenMitte; b++) {
+                z = z + " ";
+            }
+
+            System.out.println(anzahl + " * " + produkthier  + z +  rundenMehrere + euro);
         } else {
 
             String zeichenkette = produkthier;
@@ -97,14 +103,15 @@ public class Kassenbon {
         gesammt = gesammt + preisMehrere;
 
         System.out.println("----------------------------------------------------------------");
+        String rundenGesammt = String.format("%.2f", gesammt);
 
-        int leerzeichenEnde = breitebon - rundenpreis.length() - euro.length();
+        int leerzeichenEnde = breitebon - rundenGesammt.length() - euro.length();
         String t = "";
         for (int k = 0; k < leerzeichenEnde; k++) {
             t = t + " ";
         }
 
-        System.out.println(t + gesammt + euro);
+        System.out.println(t + rundenGesammt + euro);
 
         System.out.println(" " + '\n' + '\n');
         return gesammt;

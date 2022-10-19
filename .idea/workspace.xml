@@ -88,13 +88,6 @@
       <option name="presentableId" value="Default" />
       <updated>1658996036519</updated>
     </task>
-    <task id="LOCAL-00033" summary="Datum Zeit">
-      <created>1663752076932</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1663752076932</updated>
-    </task>
     <task id="LOCAL-00034" summary="21.09.2022">
       <created>1663753168105</created>
       <option name="number" value="00034" />
@@ -431,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666169629921</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Noch Layout usw verbessern&#10;(des Codes)">
+      <created>1666172442659</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1666172442659</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -485,32 +485,32 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Kassenbon.java</url>
-          <line>66</line>
+          <line>72</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Kassenbon.java</url>
-          <line>84</line>
+          <line>90</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Kassenbon.java</url>
-          <line>74</line>
+          <line>80</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Kassenbon.java</url>
-          <line>82</line>
+          <line>88</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Kassenbon.java</url>
-          <line>91</line>
+          <line>97</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Kassenbon.java</url>
-          <line>96</line>
+          <line>102</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
