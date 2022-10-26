@@ -99,7 +99,9 @@ public class Kassensystem {
     }
 
     private static List<Produkt> ReadSQL()  throws SQLException{
-        String url = "jdbc:mysql://localhost:3306/test";
+                        //CREATE USER 'java'@'%' IDENTIFIED BY '123';
+                        //GRANT ALL ON transferprojekt.* TO 'java'@'%' IDENTIFIED BY '123';
+        String url = "jdbc:mysql://localhost:3306/transferprojekt";
         String username = "java";
         String password = "123";
         List<Produkt> produkts= new ArrayList<>();
@@ -115,6 +117,7 @@ public class Kassensystem {
 
             while (rs.next()){
 
+                // String id = rs.getString("id");
                 String produktID = rs.getString("Product ID");
                 String category = rs.getString("Category");
                 String subcategory = rs.getString("Sub-Category");
