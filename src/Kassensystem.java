@@ -12,7 +12,7 @@ public class Kassensystem {
 
         double alles = 0;
 
-        List<Produkt> produkts = ReadSQL();
+        List<Produkt> produkts = readSQL();
 
         //csvreader(produkts);
         // jetzt aus SQL
@@ -98,7 +98,7 @@ public class Kassensystem {
 
     }
 
-    private static List<Produkt> ReadSQL()  throws SQLException{
+    private static List<Produkt> readSQL()  throws SQLException{
                         //CREATE USER 'java'@'%' IDENTIFIED BY '123';
                         //GRANT ALL ON transferprojekt.* TO 'java'@'%' IDENTIFIED BY '123';
         String url = "jdbc:mysql://localhost:3306/transferprojekt";

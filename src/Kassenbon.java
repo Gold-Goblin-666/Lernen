@@ -1,4 +1,4 @@
-import java.text.NumberFormat;
+import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -15,14 +15,9 @@ public class Kassenbon {
         positionen = new ArrayList<Rechnungsposition>();
     }
 
-    public double printIt() {
-
-
+    public double printIt() throws SQLException {
 
         double gesammt = 0.0;
-
-
-
         String euro = " EUR";
 
 
@@ -40,6 +35,16 @@ public class Kassenbon {
 
         System.out.println("Kassenbon" + '\n' + "kasse 1 " + '\n' + datumzeit + '\n' + "----------------------------------------------------------------");
             gesammt = printRechnungspositionen(gesammt, euro);
+
+            // Hier Datum in SQLDatenbank bei Table bon einfügen
+        datumInSQl();
+
+
+
+
+
+
+
         return gesammt;
     }
 
@@ -119,6 +124,39 @@ public class Kassenbon {
         System.out.println(" " + '\n' + '\n');
         return gesammt;
     }
+
+    private void datumInSQl () throws SQLException {
+
+//SELECT * FROM transferprojekt.bon;
+//insert into transferprojekt.bon (datumzeit) value ("12/10/2022 12:30");
+//insert into transferprojekt.bon (datumzeit) value ("04/10/2006 12:30");
+//delete FROM transferprojekt.bon where id < 100 ;
+
+
+        String url = "jdbc:mysql://localhost:3306/transferprojekt";
+        String username = "java";
+        String password = "123";
+        //System.out.println("Connecting database...");
+
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            //System.out.println("Database connected!");
+
+            String datumZeitString = datumzeit;
+            //System.out.println( datumZeitString );
+
+            String datumZeitSQL = "insert into transferprojekt.bon (datumzeit) value (\"" + datumZeitString + "\");";
+            //System.out.println( datumZeitSQL );
+
+            PreparedStatement statement = connection.prepareStatement(datumZeitSQL);
+            statement.execute();
+
+        } catch (SQLException e) {
+            throw new IllegalStateException("Cannot connect the database!", e);
+        }
+    }
+
+
+
 
     private int getSplit(String zeichenkette, int h) {
 
