@@ -38,13 +38,6 @@ public class Kassenbon {
 
             // Hier Datum in SQLDatenbank bei Table bon einfügen
         datumInSQl();
-
-
-
-
-
-
-
         return gesammt;
     }
 
