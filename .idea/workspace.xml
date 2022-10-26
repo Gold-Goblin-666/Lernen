@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5b722ad3-cc90-4c03-a5a4-b3841a7075f1" name="Changes" comment="SQL datenbank">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Kassenbon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kassenbon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,13 +88,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1658996036519</updated>
-    </task>
-    <task id="LOCAL-00049" summary="28.09.2022">
-      <created>1664359728822</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1664359728822</updated>
     </task>
     <task id="LOCAL-00050" summary="28.09.2022">
       <created>1664360401298</created>
@@ -433,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666791770762</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="SQL datenbank">
+      <created>1666793800054</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1666793800054</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
