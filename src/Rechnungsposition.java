@@ -67,12 +67,15 @@ public class Rechnungsposition {
 
             Integer produkt_id = getProdukt().getId();
             Integer bon_id =  kassenbon.getId();
+
+            System.out.println("bon_id : " + bon_id);
+
             Integer anzahl = getAnzahl() ;
 
             //System.out.println( produkt_id + " " + bon_id + " " + anzahl  );
 
             String rechnungspositionenSQL = "insert into transferprojekt.rechnungspositionen (produkt_id, bon_id, anzahl) value (" +  produkt_id + "," + bon_id + "," +  anzahl + ");";
-            //System.out.println( rechnungspositionenSQL );
+            System.out.println( rechnungspositionenSQL );
 
             PreparedStatement statement = connection.prepareStatement(rechnungspositionenSQL);
             statement.execute();

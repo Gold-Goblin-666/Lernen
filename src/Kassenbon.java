@@ -157,10 +157,15 @@ public class Kassenbon {
 
             String sql = "SELECT LAST_INSERT_ID() as id;";
 
+            //PreparedStatement stmt = connection.prepareStatement(sql);
+            //ResultSet rs = stmt.executeQuery();
+            //this.id = rs.getInt("id");
+
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             rs.next();
             this.id = rs.getInt("id");
+            System.out.println("this.id : " + this.id);
 
 
         } catch (SQLException e) {
