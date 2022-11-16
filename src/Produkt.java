@@ -1,12 +1,15 @@
 public class Produkt {
+
+    Integer id;
     String produktID;
     String category;
     String subCategory;
     String name;
     Double preis;
 
-    public Produkt(String produktID, String category, String subCategory, String name, Double preis) {
+    public Produkt(Integer id, String produktID, String category, String subCategory, String name, Double preis) {
 
+        this.id = id;
         this.produktID = produktID;
         this.category = category;
         this.subCategory = subCategory;
@@ -14,6 +17,13 @@ public class Produkt {
         this.preis = preis;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Double getPreis() {
         return preis;

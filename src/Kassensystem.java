@@ -117,14 +117,14 @@ public class Kassensystem {
 
             while (rs.next()){
 
-                // String id = rs.getString("id");
+                Integer id = rs.getInt("id");
                 String produktID = rs.getString("Product ID");
                 String category = rs.getString("Category");
                 String subcategory = rs.getString("Sub-Category");
                 String produktname = rs.getString("Product Name");
                 Double price = rs.getDouble("Price");
 
-                Produkt produkt = new Produkt(produktID, category, subcategory, produktname, price);
+                Produkt produkt = new Produkt(id, produktID, category, subcategory, produktname, price);
                 produkts.add(produkt);
 
             }
