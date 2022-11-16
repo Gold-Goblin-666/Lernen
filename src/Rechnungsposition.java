@@ -66,7 +66,7 @@ public class Rechnungsposition {
             //System.out.println("Database connected!");
 
             Integer produkt_id = getProdukt().getId();
-            Integer bon_id =  kassenbon.getId() + 1;
+            Integer bon_id =  kassenbon.getId();
 
             System.out.println("bon_id : " + bon_id);
 
