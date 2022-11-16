@@ -31,6 +31,7 @@ public class Kassensystem {
         while (kassiererfertig == false) {
 
             Kassenbon bon = new Kassenbon();
+            bon.kassenbonToDB();
 
             System.out.println("Nächster Kunde [Y/N]");
             String naechsterKunde = scanner.nextLine();

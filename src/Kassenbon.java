@@ -44,10 +44,12 @@ public class Kassenbon {
 
 
         System.out.println("Kassenbon" + '\n' + "kasse 1 " + '\n' + datumzeit + '\n' + "----------------------------------------------------------------");
+
             gesammt = printRechnungspositionen(gesammt, euro);
 
             // Hier Datum in SQLDatenbank bei Table bon einfügen
-        kassenbonToDB();
+        //kassenbonToDB();
+
         return gesammt;
     }
 
@@ -130,7 +132,7 @@ public class Kassenbon {
         return gesammt;
     }
 
-    private void kassenbonToDB() throws SQLException {
+    public void kassenbonToDB() throws SQLException {
 
 //SELECT * FROM transferprojekt.bon;
 //insert into transferprojekt.bon (datumzeit) value ("12/10/2022 12:30");
