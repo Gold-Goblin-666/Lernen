@@ -70,7 +70,7 @@ public class Kassensystem {
                     System.out.println(produkt.getName() + " " + anzahlProdukt);
 
 
-                    Rechnungsposition rp = new Rechnungsposition(produkt, anzahlProdukt);
+                    Rechnungsposition rp = new Rechnungsposition(produkt, anzahlProdukt, bon);
                     bon.positionen.add(rp);
 
                 } else {

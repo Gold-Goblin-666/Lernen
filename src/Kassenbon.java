@@ -5,7 +5,17 @@ import java.util.Calendar;
 import java.util.List;
 
 public class Kassenbon {
-        public Long id;
+
+    private Integer id;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String datumzeit;
 
     public List<Rechnungsposition> positionen;
@@ -37,11 +47,11 @@ public class Kassenbon {
             gesammt = printRechnungspositionen(gesammt, euro);
 
             // Hier Datum in SQLDatenbank bei Table bon einfügen
-        datumInSQl();
+        kassenbonToDB();
         return gesammt;
     }
 
-    private double printRechnungspositionen(double gesammt, String euro) {
+    private double printRechnungspositionen(double gesammt, String euro) throws SQLException {
 
         int breitebon = 64;
 
@@ -71,6 +81,7 @@ public class Kassenbon {
                 }
 
                 System.out.println(anzahl + " * " + produkthier + z + rundenMehrere + euro);
+               position.eintragRechnungspositionenInSQL(this);
             } else {
 
                 String zeichenkette = produkthier;
@@ -99,6 +110,7 @@ public class Kassenbon {
                         System.out.println(z + print_line);
                     }
                 }
+                position.eintragRechnungspositionenInSQL(this);
             }
             gesammt = gesammt + preisMehrere;
         }
@@ -118,7 +130,7 @@ public class Kassenbon {
         return gesammt;
     }
 
-    private void datumInSQl () throws SQLException {
+    private void kassenbonToDB() throws SQLException {
 
 //SELECT * FROM transferprojekt.bon;
 //insert into transferprojekt.bon (datumzeit) value ("12/10/2022 12:30");
@@ -143,12 +155,18 @@ public class Kassenbon {
             PreparedStatement statement = connection.prepareStatement(datumZeitSQL);
             statement.execute();
 
+            String sql = "SELECT LAST_INSERT_ID() as id;";
+
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            rs.next();
+            this.id = rs.getInt("id");
+
+
         } catch (SQLException e) {
             throw new IllegalStateException("Cannot connect the database!", e);
         }
     }
-
-
 
 
     private int getSplit(String zeichenkette, int h) {
