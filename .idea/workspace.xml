@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5b722ad3-cc90-4c03-a5a4-b3841a7075f1" name="Changes" comment="SQL datenbank">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rechnungsposition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rechnungsposition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kassensystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kassensystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,13 +89,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1658996036519</updated>
-    </task>
-    <task id="LOCAL-00056" summary="28.09.2022">
-      <created>1664369071150</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1664369071150</updated>
     </task>
     <task id="LOCAL-00057" summary="28.09.2022">
       <created>1664371806565</created>
@@ -433,7 +426,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668613480795</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="SQL datenbank">
+      <created>1668613703532</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1668613703532</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -532,6 +532,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Kassensystem.java</url>
+          <line>101</line>
+          <properties class="Kassensystem" method="readSQL">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

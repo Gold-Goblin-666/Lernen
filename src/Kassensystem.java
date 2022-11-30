@@ -100,7 +100,7 @@ public class Kassensystem {
     }
 
     private static List<Produkt> readSQL()  throws SQLException{
-                        //CREATE USER 'java'@'%' IDENTIFIED BY '123';
+                        //CREATE USER 'test'@'%' IDENTIFIED BY '123';
                         //GRANT ALL ON transferprojekt.* TO 'java'@'%' IDENTIFIED BY '123';
         String url = "jdbc:mysql://localhost:3306/transferprojekt";
         String username = "java";
